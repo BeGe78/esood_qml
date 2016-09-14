@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>esood.qml</file>
+        <file>content/qmldir</file>
+        <file>content/Button.qml</file>
+        <file>content/Login.qml</file>
+        <file>content/ParametersChoice.qml</file>
+        <file>content/SelectorsChartView.qml</file>
+        <file>content/Settings.qml</file>
+        <file>content/+windows/Settings.qml</file>
+    </qresource>
+</RCC>
