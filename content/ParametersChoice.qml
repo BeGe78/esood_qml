@@ -5,7 +5,6 @@
 
 import QtQuick 2.7
 import QtQuick.Controls 1.2
-import QtQuick.Window 2.2
 import "."
 
 Rectangle {
@@ -233,7 +232,6 @@ Rectangle {
         onCurrentIndexChanged: {
             mainRect.currentIndicator1 = model.get(currentIndex).id1;
             mainRect.currentIndicator1Name = model.get(currentIndex).name;
-            console.log("indicator1: " + mainRect.currentIndicator1Name);
         }
     }
     ComboBox {
@@ -251,7 +249,6 @@ Rectangle {
         onCurrentIndexChanged: {
             mainRect.currentIndicator2 = model.get(currentIndex).id1;
             mainRect.currentIndicator2Name = model.get(currentIndex).name;
-            console.log("indicator2: " + mainRect.currentIndicator2Name);
         }
     }
     ComboBox {
@@ -267,7 +264,6 @@ Rectangle {
         textRole: "name"
         onCurrentIndexChanged: {
             mainRect.currentCountry1 = model.get(currentIndex).name;
-            console.log("country1: " + mainRect.currentCountry1);
         }
     }
     ComboBox {
@@ -296,9 +292,6 @@ Rectangle {
         anchors.top: buttonRow.bottom
         anchors.topMargin: 160
         onClicked: {
-            console.log("ParametersChoice Screen.desktopAvailableHeight: ", Screen.desktopAvailableHeight);
-            console.log("ParametersChoice Screen.desktopAvailableWidth: ", Screen.desktopAvailableWidth);
-            console.log("ParametersChoice Screen.orientation: ", Screen.orientation);
             yearBeginTextInput.focus = false;
             yearEndTextInput.focus = false;
             selectorsChartView.drawChart();
@@ -306,11 +299,17 @@ Rectangle {
     }
 
     function getCountries() {
-        var req = "https://bege.hd.free.fr/api/v1/countries.json";
-        if (!req)
-            return;
+        var req = "http://localhost:3000/api/v1/countries.json";        
+        var params = "?email=";
+        params += mainRect.email;
+        params += "&auth_token=";
+        params += encodeURIComponent(mainRect.auth_token);
+        params += '&language=';
+        params += mainRect.language;
+        
         var xhr = new XMLHttpRequest;
-        xhr.open("GET", req, true);
+        xhr.open("GET", req + params , true);
+        xhr.setRequestHeader("Content-Type", "application/json");
 
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -333,15 +332,20 @@ Rectangle {
                 }
             }
         }
-        xhr.send(JSON.stringify({email:mainRect.email, auth_token:mainRect.auth_token}))
+        xhr.send(null);
     }
 
     function getIndicators() {
-        var req = "https://bege.hd.free.fr/api/v1/indicators.json";
-        if (!req)
-            return;
+        var req = "http://localhost:3000/api/v1/indicators.json";
+        var params = "?email=";
+        params += mainRect.email;
+        params += "&auth_token=";
+        params += encodeURIComponent(mainRect.auth_token);
+        params += '&language=';
+        params += mainRect.language;
         var xhr = new XMLHttpRequest;
-        xhr.open("GET", req, true);
+        xhr.open("GET", req + params, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
 
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -366,7 +370,7 @@ Rectangle {
                 }
             }
         }
-        xhr.send(JSON.stringify({email:mainRect.email, auth_token:mainRect.auth_token}));
+        xhr.send(null);
     }
 
     Component.onCompleted: {

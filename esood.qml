@@ -33,6 +33,8 @@ Rectangle {
     property string email: ""
     property string password: ""
     property string auth_token: ""
+    property string language: Qt.locale("").name
+    //property string language: Qt.locale("en_EN").name // to test english
 
     Rectangle {
         id: banner
@@ -91,6 +93,10 @@ Rectangle {
                 id: login
                 width: root.width
                 height: root.height
+                onLoginok: { //refresh lists if new login
+                    parametersChoice.getCountries();
+                    parametersChoice.getIndicators();
+                }
             }
 
             ParametersChoice {
@@ -98,10 +104,6 @@ Rectangle {
                 width: root.width
                 height: root.height
                 email: mainRect.email
-                onEmailChanged: { //refresh lists if email changes
-                    getCountries();
-                    getIndicators();
-                }
             }
             
             SelectorsChartView {

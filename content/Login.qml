@@ -206,9 +206,7 @@ Rectangle {
     }
 
     function postSession() {
-        var req = "https://bege.hd.free.fr/api/v1/sessions.json";
-        if (!req)
-            return;
+        var req = "http://localhost:3000/api/v1/sessions.json";
         var xhr = new XMLHttpRequest;
         xhr.open("POST", req, true);
         xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
@@ -220,27 +218,27 @@ Rectangle {
                     mainRect.password = passwordTextInput.text;
                     mainRect.email = emailTextInput.text;
                     mainRect.auth_token = postSessionResponse.data.auth_token;
+                    console.log( "Login mainRect.auth_token " + mainRect.auth_token );
                     messageText.text = postSessionResponse.info;
                     emailTextInputRectangle.color = "#44444444";
                     passwordTextInputRectangle.color = "#44444444";
                     rootLogin.loginSwitch = "logout";
-                    loginButton.text = "Logout";
-                    rootLogin.loginok(); // emit signal - model.ready indicates whether the data is valid
+                    loginButton.text = qsTr("Logout");
+                    rootLogin.loginok(); // emit signal to refresh the list
                 } else {
                     messageText.text = qsTr("error Login");
                 }
             }
         }
         xhr.send(JSON.stringify({user:{email:emailTextInput.text, password:passwordTextInput.text}}));
+        console.log("login user JSON.stringify", JSON.stringify({user:{email:emailTextInput.text, password:passwordTextInput.text}}));
     }
+    
     function deleteSession() {
         var req = "http://localhost:3000/api/v1/sessions.json";
-        if (!req)
-            return;
         var xhr = new XMLHttpRequest;
         xhr.open("DELETE", req, true);
         xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var postSessionResponse = JSON.parse(xhr.responseText);
@@ -254,12 +252,14 @@ Rectangle {
                     emailTextInputRectangle.color = "#00000000";
                     passwordTextInputRectangle.color = "#00000000";
                     rootLogin.loginSwitch = "login";
-                    loginButton.text = "Login";
+                    loginButton.text = qsTr("Login");
+                    rootLogin.loginok(); // emit signal to refresh the list
                 } else {
                     messageText.text = qsTr("error Logout");
                 }
             }
         }
-        xhr.send(JSON.stringify({email:emailTextInput.text, auth_token:mainRect.auth_token}));
+        xhr.send(JSON.stringify({user:{email:emailTextInput.text, password:passwordTextInput.text}}));
+        console.log("delete user JSON.stringify", JSON.stringify({user:{email:emailTextInput.text, password:passwordTextInput.text}}));
     }
 }

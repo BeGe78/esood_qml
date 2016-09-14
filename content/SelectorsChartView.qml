@@ -7,8 +7,6 @@ import QtQuick 2.7
 import QtCharts 2.1
 import "."
 
-
-
 Rectangle {
     id: root
     width: 320
@@ -103,7 +101,6 @@ Rectangle {
                 root.x = root.x + (pinchArea.m_x1-pinchArea.m_x2)*(1-pinchArea.m_zoom1)
                 root.y = root.y + (pinchArea.m_y1-pinchArea.m_y2)*(1-pinchArea.m_zoom1)
             }
-            //onPressed: console.log("Press in child")
         }
     }
     
@@ -202,7 +199,6 @@ Rectangle {
                 var response = JSON.parse(xhr.responseText);
                 if (xhr.status == 200) {
                     var myArr = response.data;
-                    console.log( "SelectorsChartView Qt.locale(): " + Qt.locale().name );
                     serie1.removePoints(0, root.nbXticks);
                     serie2.removePoints(0, root.nbXticks);
                     serie2b.removePoints(0, root.nbXticks);
@@ -257,6 +253,8 @@ Rectangle {
         params += mainRect.email;
         params += '&auth_token='
         params += mainRect.auth_token;
+        params += '&language=';
+        params += mainRect.language;
         xhr.send(params);
     }
 }

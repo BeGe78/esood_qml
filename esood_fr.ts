@@ -25,16 +25,22 @@
     </message>
     <message>
         <location filename="content/Login.qml" line="179"/>
+        <location filename="content/Login.qml" line="255"/>
         <source>Login</source>
-        <translation>Connection</translation>
+        <translation>Connexion</translation>
     </message>
     <message>
-        <location filename="content/Login.qml" line="230"/>
+        <location filename="content/Login.qml" line="226"/>
+        <source>Logout</source>
+        <translation>Déconnexion</translation>
+    </message>
+    <message>
+        <location filename="content/Login.qml" line="229"/>
         <source>error Login</source>
         <translation>erreur Connection</translation>
     </message>
     <message>
-        <location filename="content/Login.qml" line="259"/>
+        <location filename="content/Login.qml" line="258"/>
         <source>error Logout</source>
         <translation>erreur Deconnection</translation>
     </message>
@@ -42,7 +48,7 @@
 <context>
     <name>ParametersChoice</name>
     <message>
-        <location filename="content/ParametersChoice.qml" line="119"/>
+        <location filename="content/ParametersChoice.qml" line="118"/>
         <source>Year Begin:</source>
         <translation>Année Début:</translation>
     </message>
@@ -52,22 +58,22 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="content/ParametersChoice.qml" line="151"/>
+        <location filename="content/ParametersChoice.qml" line="150"/>
         <source>Year End: </source>
         <translation>Année Fin:</translation>
     </message>
     <message>
-        <location filename="content/ParametersChoice.qml" line="190"/>
+        <location filename="content/ParametersChoice.qml" line="189"/>
         <source>Countries</source>
         <translation>Pays</translation>
     </message>
     <message>
-        <location filename="content/ParametersChoice.qml" line="207"/>
+        <location filename="content/ParametersChoice.qml" line="206"/>
         <source>Indicators</source>
         <translation>Indicateurs</translation>
     </message>
     <message>
-        <location filename="content/ParametersChoice.qml" line="294"/>
+        <location filename="content/ParametersChoice.qml" line="290"/>
         <source>Update</source>
         <translation>Rafraichir</translation>
     </message>
@@ -75,7 +81,7 @@
 <context>
     <name>SelectorsChartView</name>
     <message>
-        <location filename="content/SelectorsChartView.qml" line="138"/>
+        <location filename="content/SelectorsChartView.qml" line="135"/>
         <source>Year</source>
         <translation>Année</translation>
     </message>

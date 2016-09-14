@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
     QObject::connect(viewer.engine(), &QQmlEngine::quit, &viewer, &QWindow::close);
     QTranslator qtTranslator;
     qtTranslator.load("esood_" + QLocale::system().name(), ":/");
+    //qtTranslator.load("esood_en", ":/"); // to test english
     app.installTranslator(&qtTranslator);
 
     viewer.setTitle(QStringLiteral("QML Chart"));
