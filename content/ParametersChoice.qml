@@ -187,7 +187,7 @@ Rectangle {
         Button {
             id: countriesButton
             radius: 3
-            text: "Countries"
+            text: qsTr("Countries")
             buttonEnabled: true
             color: "#286090"
             onClicked: {
@@ -204,7 +204,7 @@ Rectangle {
         Button {
             id: indicatorsButton
             radius: 3
-            text: "Indicators"
+            text: qsTr("Indicators")
             color: "#337ABF"
             onClicked: {
                 indicator2Combo.height = 30;
@@ -291,7 +291,7 @@ Rectangle {
         id: update
         x: 10
         radius: 3
-        text: "Update"
+        text: qsTr("Update")
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: buttonRow.bottom
         anchors.topMargin: 160

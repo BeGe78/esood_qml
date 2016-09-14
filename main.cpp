@@ -7,6 +7,7 @@
 #include <QtQuick/QQuickView>
 #include <QtCore/QDir>
 #include <QtQml/QQmlEngine>
+#include <QTranslator>
 
 int main(int argc, char *argv[])
 {
@@ -24,6 +25,9 @@ int main(int argc, char *argv[])
     viewer.engine()->addImportPath(extraImportPath.arg(QGuiApplication::applicationDirPath(),
                                       QString::fromLatin1("qml")));
     QObject::connect(viewer.engine(), &QQmlEngine::quit, &viewer, &QWindow::close);
+    QTranslator qtTranslator;
+    qtTranslator.load("esood_" + QLocale::system().name(), ":/");
+    app.installTranslator(&qtTranslator);
 
     viewer.setTitle(QStringLiteral("QML Chart"));
 

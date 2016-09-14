@@ -8,5 +8,7 @@
         <file>content/SelectorsChartView.qml</file>
         <file>content/Settings.qml</file>
         <file>content/+windows/Settings.qml</file>
+        <file>esood_en.qm</file>
+        <file>esood_fr.qm</file>
     </qresource>
 </RCC>

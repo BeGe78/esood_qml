@@ -115,10 +115,7 @@ Rectangle {
         id: selectorChart
         title: root.charttitle
         titleFont: Qt.font({pixelSize: 12, bold: true, underline: true})
-        //margins.left: 30
-        //margins.bottom: 30
         legend.font: Qt.font({pixelSize: 12})
-        //anchors.fill: parent
         width: root.width
         height: root.height
         x: 0
@@ -138,7 +135,7 @@ Rectangle {
             id: axisX
             labelsFont:Qt.font({pixelSize: 10})
             labelsAngle: -45
-            titleText: "Year"
+            titleText: qsTr("Year")
             min: mainRect.yearbegin
             max: mainRect.yearend
             tickCount: mainRect.yearend - mainRect.yearbegin - 1

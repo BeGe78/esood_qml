@@ -18,8 +18,6 @@ Rectangle {
     color: "white"
     transform: Scale {
         id: scaler
-        //origin.x: pinchArea.m_x2
-        //origin.y: pinchArea.m_y2
         origin.x: rootLogin.width / 2
         origin.y: 5
         xScale: pinchArea.m_zoom2
@@ -178,7 +176,7 @@ Rectangle {
         id: loginButton
         anchors.top: passwordRow.bottom
         radius: 3
-        text: "Login"
+        text: qsTr("Login")
         anchors.topMargin: 28
         anchors.horizontalCenterOffset: 0
         anchors.horizontalCenter: passwordRow.horizontalCenter
@@ -229,7 +227,7 @@ Rectangle {
                     loginButton.text = "Logout";
                     rootLogin.loginok(); // emit signal - model.ready indicates whether the data is valid
                 } else {
-                    messageText.text = "error Login";
+                    messageText.text = qsTr("error Login");
                 }
             }
         }
@@ -258,7 +256,7 @@ Rectangle {
                     rootLogin.loginSwitch = "login";
                     loginButton.text = "Login";
                 } else {
-                    messageText.text = "error Logout";
+                    messageText.text = qsTr("error Logout");
                 }
             }
         }
