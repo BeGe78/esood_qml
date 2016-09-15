@@ -7,7 +7,9 @@
 #include <QtQuick/QQuickView>
 #include <QtCore/QDir>
 #include <QtQml/QQmlEngine>
+#include <QQmlContext>
 #include <QTranslator>
+#include "ganalytics.h"
 
 int main(int argc, char *argv[])
 {
@@ -24,6 +26,10 @@ int main(int argc, char *argv[])
 #endif
     viewer.engine()->addImportPath(extraImportPath.arg(QGuiApplication::applicationDirPath(),
                                       QString::fromLatin1("qml")));
+    GoogleAnalytics ganalytics;
+    ganalytics.initTracker();
+    viewer.rootContext()->setContextProperty("gAnalytics", &ganalytics);
+    
     QObject::connect(viewer.engine(), &QQmlEngine::quit, &viewer, &QWindow::close);
     QTranslator qtTranslator;
     qtTranslator.load("esood_" + QLocale::system().name(), ":/");

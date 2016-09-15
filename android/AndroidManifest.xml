@@ -31,6 +31,11 @@
             <meta-data android:value="@string/ministro_needed_msg" android:name="android.app.ministro_needed_msg"/>
             <meta-data android:value="@string/fatal_error_msg" android:name="android.app.fatal_error_msg"/>
             <!--  Messages maps -->
+            
+            <!-- Analytics --> 
+            <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+            <meta-data android:name="com.google.android.gms.analytics.globalConfigResource" android:resource="@xml/analytics_global_config"/>
+            <!-- Analytics -->
 
             <!-- Splash screen -->
             <!-- meta-data android:name="android.app.splash_screen_drawable" android:resource="@drawable/logo"/ -->
@@ -60,6 +65,13 @@
     </activity>
 
     <!-- For adding service(s) please check: https://wiki.qt.io/AndroidServices -->
+    <!-- Used for Google Play Store Campaign Measurement-->;
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <receiver android:name="com.google.android.gms.analytics.CampaignTrackingReceiver" android:exported="true">
+          <intent-filter>
+            <action android:name="com.android.vending.INSTALL_REFERRER"/>
+          </intent-filter>
+        </receiver>
 
     </application>
 

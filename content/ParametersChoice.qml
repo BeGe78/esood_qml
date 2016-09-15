@@ -198,6 +198,8 @@ Rectangle {
                 country1Combo.anchors.topMargin = 15
                 countriesButton.color = "#286090";
                 mainRect.formswitch = "country";
+                console.log("GA sendEvent");
+                //gAnalytics.sendEvent("Category", "Action", "Label", 1);
             }
         }
         Button {
@@ -214,6 +216,8 @@ Rectangle {
                 country1Combo.anchors.topMargin = 67
                 countriesButton.color = "#337ABF";
                 mainRect.formswitch = "indicator";
+                console.log("GA sendHit");
+                gAnalytics.sendHit("myView");
             }
         }
     }
@@ -294,6 +298,20 @@ Rectangle {
         onClicked: {
             yearBeginTextInput.focus = false;
             yearEndTextInput.focus = false;
+            var event = mainRect.email;
+            event += ":";
+            event += mainRect.yearbegin;
+            event += ":";
+            event += mainRect.yearend;
+            event += ":";
+            event += mainRect.currentIndicator1;
+            event += ":";
+            event += mainRect.currentIndicator2;
+            event += ":";
+            event += mainRect.currentCountry1;
+            event += ":";
+            event += mainRect.currentCountry2;
+            gAnalytics.sendEvent("A-Selectors", mainRect.formswitch, event, 1);
             selectorsChartView.drawChart();
         }
     }
