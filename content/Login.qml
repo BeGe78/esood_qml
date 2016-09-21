@@ -206,7 +206,7 @@ Rectangle {
     }
 
     function postSession() {
-        var req = "https://bege.hd.free.fr/api/v1/sessions.json";
+        var req = "http://localhost:3000/api/v1/sessions.json";
         var xhr = new XMLHttpRequest;
         xhr.open("POST", req, true);
         xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
@@ -235,7 +235,7 @@ Rectangle {
     }
     
     function deleteSession() {
-        var req = "http://localhost:3000/api/v1/sessions.json";
+        var req = "https://bege.hd.free.fr/api/v1/sessions.json";
         var xhr = new XMLHttpRequest;
         xhr.open("DELETE", req, true);
         xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');

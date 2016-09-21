@@ -35,6 +35,16 @@ Rectangle {
     property string auth_token: ""
     property string language: Qt.locale("").name
     //property string language: Qt.locale("en_EN").name // to test english
+    property double mean1: 0.0
+    property double mean2: 0.0
+    property double coeflm1: 0.0
+    property double coeflm2: 0.0
+    property double coeflm3_1: 0.0
+    property double coeflm3_2: 0.0
+    property string meanrate1: ""
+    property string meanrate2: ""
+    property string cor: ""
+    
 
     Rectangle {
         id: banner
@@ -108,6 +118,11 @@ Rectangle {
             
             SelectorsChartView {
                 id: selectorsChartView
+                width: root.width
+                height: root.height
+            }
+            SelectorsStatView {
+                id: selectorsStatView
                 width: root.width
                 height: root.height
             }

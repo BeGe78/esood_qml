@@ -215,7 +215,7 @@ Rectangle {
                     root.lowvalue = response.lowvalue;
                     root.nbXticks = myArr.length;
                     root.nbYticks = response.nbticks;
-                    axisY.labelFormat = response.label_format
+                    axisY.labelFormat = response.label_format;
                     if (response.same_scale) {
                         serie2.visible = true;
                         serie2b.visible = false;
@@ -227,8 +227,18 @@ Rectangle {
                         serie2.visible = false;
                         serie2b.visible = true;
                         axisYb.visible = true;
-                        axisYb.labelFormat = response.label_format2
+                        axisYb.labelFormat = response.label_format2;
                     }
+                    mainRect.mean1 = response.mean1;
+                    mainRect.mean2 = response.mean2;
+                    mainRect.coeflm1 = response.coeflm1;
+                    mainRect.coeflm2 = response.coeflm2;
+                    mainRect.coeflm3_1 = response.coeflm3_1;
+                    mainRect.coeflm3_2 = response.coeflm3_2;
+                    mainRect.meanrate1 = response.meanrate1;
+                    mainRect.meanrate2 = response.meanrate2;
+                    mainRect.cor = response.cor.toString();
+                    selectorsStatView.drawStat();
                 } else {
                     listview.model.append("error CountriesIndex")
                 }

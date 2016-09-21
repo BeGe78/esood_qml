@@ -4,7 +4,9 @@
 */ 
 
 import QtQuick 2.7
-import QtQuick.Controls 1.2
+import QtQuick.Controls 1.4
+import QtQuick.Controls.Styles 1.4
+import QtQuick.Controls.Private 1.0
 import "."
 
 Rectangle {
@@ -229,10 +231,17 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: buttonRow.bottom
         anchors.topMargin: 15
-        editable: true
+        editable: false
         currentIndex: 1
         model: indicatorModel
         textRole: "name"
+        style: ComboBoxStyle {
+            label: TextArea {
+                verticalAlignment: Text.AlignVCenter
+                anchors.left: parent.left
+                text: control.currentText
+            }
+        }
         onCurrentIndexChanged: {
             mainRect.currentIndicator1 = model.get(currentIndex).id1;
             mainRect.currentIndicator1Name = model.get(currentIndex).name;
@@ -245,11 +254,18 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: indicator1Combo.bottom
         anchors.topMargin: 15
-        editable: true
+        editable: false
         visible: false
         currentIndex: 0
         model: indicatorModel
         textRole: "name"
+        style: ComboBoxStyle {
+            label: TextArea {
+                verticalAlignment: Text.AlignVCenter
+                anchors.left: parent.left
+                text: control.currentText
+            }
+        }
         onCurrentIndexChanged: {
             mainRect.currentIndicator2 = model.get(currentIndex).id1;
             mainRect.currentIndicator2Name = model.get(currentIndex).name;
@@ -262,10 +278,17 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: indicator1Combo.bottom
         anchors.topMargin: 15
-        editable: true
+        editable: false
         currentIndex: 0
         model: countryModel
         textRole: "name"
+        style: ComboBoxStyle {
+            label: TextArea {
+                verticalAlignment: Text.AlignVCenter
+                anchors.left: parent.left
+                text: control.currentText
+            }
+        }
         onCurrentIndexChanged: {
             mainRect.currentCountry1 = model.get(currentIndex).name;
         }
@@ -277,11 +300,18 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: indicator1Combo.bottom
         anchors.topMargin: 67
-        editable: true
+        editable: false
         visible: true
         currentIndex: 1
         model: countryModel
         textRole: "name"
+        style: ComboBoxStyle {
+            label: TextArea {
+                verticalAlignment: Text.AlignVCenter
+                anchors.left: parent.left
+                text: control.currentText
+            }
+        }
         onCurrentIndexChanged: {
             mainRect.currentCountry2 = model.get(currentIndex).name;
         }
@@ -317,7 +347,7 @@ Rectangle {
     }
 
     function getCountries() {
-        var req = "http://localhost:3000/api/v1/countries.json";        
+        var req = "http://localhost:3000/api/v1/countries.json";
         var params = "?email=";
         params += mainRect.email;
         params += "&auth_token=";

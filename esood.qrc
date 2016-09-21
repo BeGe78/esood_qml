@@ -6,6 +6,7 @@
         <file>content/Login.qml</file>
         <file>content/ParametersChoice.qml</file>
         <file>content/SelectorsChartView.qml</file>
+        <file>content/SelectorsStatView.qml</file>
         <file>content/Settings.qml</file>
         <file>content/+windows/Settings.qml</file>
         <file>esood_en.qm</file>
