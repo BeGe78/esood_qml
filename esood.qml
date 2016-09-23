@@ -12,6 +12,7 @@ The last 2 pages support horizontal and vertical drag.
 */
 
 import QtQuick 2.7
+import QtQuick.Controls 2.0
 import QtQml.Models 2.1
 import "./content"
 
@@ -44,7 +45,6 @@ Rectangle {
     property string meanrate1: ""
     property string meanrate2: ""
     property string cor: ""
-    
 
     Rectangle {
         id: banner
@@ -63,6 +63,30 @@ Rectangle {
         }
         anchors.top: parent.top        
         width: parent.width
+        Image {
+            id: left_arrow
+            source: "./content/images/icon-left-arrow.png"
+            anchors.left: banner.left
+            anchors.leftMargin: 20
+            anchors.verticalCenter: banner.verticalCenter
+            visible: root.currentIndex > 0 ? true : false
+            MouseArea {
+                anchors.fill: parent
+                onClicked: root.currentIndex = root.currentIndex - 1;
+            }
+        }
+        Image {
+            id: right_arrow
+            source: "./content/images/icon-right-arrow.png"
+            anchors.right: banner.right
+            anchors.leftMargin: 20
+            anchors.verticalCenter: banner.verticalCenter
+            visible: root.currentIndex < 3 ? true : false
+            MouseArea {
+                anchors.fill: parent
+                onClicked: root.currentIndex = root.currentIndex + 1;
+            }
+        }
         Item {
             id: esood
             width: esoodText.width

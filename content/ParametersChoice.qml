@@ -195,7 +195,7 @@ Rectangle {
                 indicator2Combo.height = 0;
                 indicator2Combo.visible = false;
                 indicatorsButton.color = "#337ABF";
-                country2Combo.height = 30;
+                country2Combo.height = 35;
                 country2Combo.visible = true;
                 country1Combo.anchors.topMargin = 15
                 countriesButton.color = "#286090";
@@ -210,12 +210,12 @@ Rectangle {
             text: qsTr("Indicators")
             color: "#337ABF"
             onClicked: {
-                indicator2Combo.height = 30;
+                indicator2Combo.height = 35;
                 indicator2Combo.visible = true;
                 indicatorsButton.color = "#286090";
                 country2Combo.height = 0;
                 country2Combo.visible = false;
-                country1Combo.anchors.topMargin = 67
+                country1Combo.anchors.topMargin = 65
                 countriesButton.color = "#337ABF";
                 mainRect.formswitch = "indicator";
                 console.log("GA sendHit");
@@ -227,7 +227,7 @@ Rectangle {
     ComboBox {
         id: indicator1Combo
         width: 350
-        height: 30
+        height: 35
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: buttonRow.bottom
         anchors.topMargin: 15
@@ -236,10 +236,29 @@ Rectangle {
         model: indicatorModel
         textRole: "name"
         style: ComboBoxStyle {
-            label: TextArea {
+            background: Rectangle {
+                color: "#fff"
+                smooth: true
+                radius: 5
+                border.width: 1
+                Image {
+                    source: "images/down-arrow.png"
+                    width: 10
+                    height: 10
+                    anchors.bottom: parent.bottom
+                    anchors.right: parent.right
+                    anchors.bottomMargin: 5
+                    anchors.rightMargin: 5
+                }
+            }
+            label: Label {
                 verticalAlignment: Text.AlignVCenter
+                width: 200
                 anchors.left: parent.left
+                renderType: Text.NativeRendering
                 text: control.currentText
+                elide: Text.ElideRight
+                font: Qt.font({ pixelSize: 14 })
             }
         }
         onCurrentIndexChanged: {
@@ -260,10 +279,29 @@ Rectangle {
         model: indicatorModel
         textRole: "name"
         style: ComboBoxStyle {
-            label: TextArea {
+            background: Rectangle {
+                color: "#fff"
+                smooth: true
+                radius: 5
+                border.width: 1
+                Image {
+                    source: "images/down-arrow.png"
+                    width: 10
+                    height: 10
+                    anchors.bottom: parent.bottom
+                    anchors.right: parent.right
+                    anchors.bottomMargin: 5
+                    anchors.rightMargin: 5
+                }
+            }
+            label: Label {
                 verticalAlignment: Text.AlignVCenter
+                width: 200
                 anchors.left: parent.left
+                renderType: Text.NativeRendering
                 text: control.currentText
+                elide: Text.ElideRight
+                font: Qt.font({ pixelSize: 14 })
             }
         }
         onCurrentIndexChanged: {
@@ -274,7 +312,7 @@ Rectangle {
     ComboBox {
         id: country1Combo
         width: 350
-        height: 30
+        height: 35
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: indicator1Combo.bottom
         anchors.topMargin: 15
@@ -283,10 +321,29 @@ Rectangle {
         model: countryModel
         textRole: "name"
         style: ComboBoxStyle {
-            label: TextArea {
+            background: Rectangle {
+                color: "#fff"
+                smooth: true
+                radius: 5
+                border.width: 1
+                Image {
+                    source: "images/down-arrow.png"
+                    width: 10
+                    height: 10
+                    anchors.bottom: parent.bottom
+                    anchors.right: parent.right
+                    anchors.bottomMargin: 5
+                    anchors.rightMargin: 5
+                }
+            }
+            label: Label {
                 verticalAlignment: Text.AlignVCenter
+                width: 200
                 anchors.left: parent.left
+                renderType: Text.NativeRendering
                 text: control.currentText
+                elide: Text.ElideRight
+                font: Qt.font({ pixelSize: 14 })
             }
         }
         onCurrentIndexChanged: {
@@ -296,20 +353,39 @@ Rectangle {
     ComboBox {
         id: country2Combo
         width: 350
-        height: 30
+        height: 35
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: indicator1Combo.bottom
-        anchors.topMargin: 67
+        anchors.topMargin: 65
         editable: false
         visible: true
         currentIndex: 1
         model: countryModel
         textRole: "name"
         style: ComboBoxStyle {
-            label: TextArea {
+            background: Rectangle {
+                color: "#fff"
+                smooth: true
+                radius: 5
+                border.width: 1
+                Image {
+                    source: "images/down-arrow.png"
+                    width: 10
+                    height: 10
+                    anchors.bottom: parent.bottom
+                    anchors.right: parent.right
+                    anchors.bottomMargin: 5
+                    anchors.rightMargin: 5
+                }
+            }
+            label: Label {
                 verticalAlignment: Text.AlignVCenter
+                width: 200
                 anchors.left: parent.left
+                renderType: Text.NativeRendering
                 text: control.currentText
+                elide: Text.ElideRight
+                font: Qt.font({ pixelSize: 14 })
             }
         }
         onCurrentIndexChanged: {
@@ -324,7 +400,7 @@ Rectangle {
         text: qsTr("Update")
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: buttonRow.bottom
-        anchors.topMargin: 160
+        anchors.topMargin: 170
         onClicked: {
             yearBeginTextInput.focus = false;
             yearEndTextInput.focus = false;
@@ -347,7 +423,7 @@ Rectangle {
     }
 
     function getCountries() {
-        var req = "http://localhost:3000/api/v1/countries.json";
+        var req = "https://bege.hd.free.fr/api/v1/countries.json";
         var params = "?email=";
         params += mainRect.email;
         params += "&auth_token=";
@@ -384,7 +460,7 @@ Rectangle {
     }
 
     function getIndicators() {
-        var req = "http://localhost:3000/api/v1/indicators.json";
+        var req = "https://bege.hd.free.fr/api/v1/indicators.json";
         var params = "?email=";
         params += mainRect.email;
         params += "&auth_token=";
@@ -422,6 +498,7 @@ Rectangle {
     }
 
     Component.onCompleted: {
+        //mainRect.currentIndex = 1;
         getIndicators();
         getCountries();
     }

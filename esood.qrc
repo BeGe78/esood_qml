@@ -2,6 +2,9 @@
     <qresource prefix="/">
         <file>esood.qml</file>
         <file>content/qmldir</file>
+        <file>content/images/down-arrow.png</file>
+        <file>content/images/icon-left-arrow.png</file>
+        <file>content/images/icon-right-arrow.png</file>
         <file>content/Button.qml</file>
         <file>content/Login.qml</file>
         <file>content/ParametersChoice.qml</file>

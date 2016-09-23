@@ -186,7 +186,7 @@ Rectangle {
     }
     
     function drawChart() {
-        var req = "http://localhost:3000/api/v1/selectors.json";
+        var req = "https://bege.hd.free.fr/api/v1/selectors.json";
         if (!req)
             return;
         var xhr = new XMLHttpRequest;

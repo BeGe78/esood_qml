@@ -128,8 +128,8 @@ Rectangle {
                 horizontalAlignment: styleData.textAlignment
                 anchors.leftMargin: 12
                 text: styleData.value
-                font: Qt.font({ pixelSize: 20 })
-                elide: Text.ElideRight
+                font: Qt.font({ pixelSize: 16 })
+                //elide: Text.ElideRight
                 renderType: Text.NativeRendering
             }
             Rectangle {
@@ -155,23 +155,23 @@ Rectangle {
            scale: 0.01
         }
         itemDelegate: Item {
-                height: Math.max(60, label.implicitHeight)
-                property int implicitWidth: label.implicitWidth + 20
+            height: Math.max(60, label.implicitHeight)
+            property int implicitWidth: label.implicitWidth + 20
 
-                TextArea {
-                    id: label
-                    objectName: "label"
-                    width: parent.width
-                    height: parent.height
-                    anchors.leftMargin: 12
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    horizontalAlignment: styleData.textAlignment
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.verticalCenterOffset: 1
-                    text: styleData.value !== undefined ? styleData.value : ""
-                }
+            TextArea {
+                id: label
+                objectName: "label"
+                width: parent.width
+                height: parent.height
+                anchors.leftMargin: 12
+                anchors.left: parent.left
+                anchors.right: parent.right
+                horizontalAlignment: styleData.textAlignment
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.verticalCenterOffset: 1
+                text: styleData.value !== undefined ? styleData.value : ""
             }
+        }
         TableViewColumn {
             id: countryColumn
             title: mainRect.formswitch
