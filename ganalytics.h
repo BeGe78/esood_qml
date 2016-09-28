@@ -30,6 +30,7 @@ class PlatformGoogleAnalytics
 public:
     PlatformGoogleAnalytics() {}
     virtual ~PlatformGoogleAnalytics() {}
+    
     virtual void initTracker() {}
     virtual void sendHit(const QString &screenName) {}
     virtual void sendEvent(const QString &category, const QString &action, const QString &label, long value){}

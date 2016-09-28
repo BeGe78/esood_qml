@@ -1,52 +1,84 @@
-/*
-@copyright GNU GENERAL PUBLIC LICENSE  
- Version 3, 29 June 2007
- 
-The application GUI is composed of a fix banner and 4 flickable pages implemented with a ListView:
-    - Login
-    - Parameters selection
-    - Chart 
-    - Statistics
-Each page supports zoom (mouse wheel or pinch).
-The last 2 pages support horizontal and vertical drag.
-*/
-
 import QtQuick 2.7
 import QtQuick.Controls 2.0
 import QtQml.Models 2.1
 import "./content"
 
+/*!
+\qmltype esood
+
+\brief entry of the ESoOD project qml interface
+
+    
+\legalese
+@copyright GNU GENERAL PUBLIC LICENSE  
+ Version 3, 29 June 2007
+\endlegalese
+ 
+The application GUI is composed of a fix banner with directional arrows and 4 flickable pages implemented with a ListView:
+    \list
+        \li Login
+        \li Parameters selection
+        \li Chart 
+        \li Statistics
+    \endlist
+Each page supports zoom (mouse wheel or pinch).
+The last 2 pages support horizontal and vertical drag.
+*/
 Rectangle {
     id: mainRect
     width: 1000
     height: 700
-
+    /*! page index used to manage the directional arrows */
     property alias currentIndex: root.currentIndex
+    /*! selected country1 name */
     property string currentCountry1: ""
+    /*! selected country2 name */
     property string currentCountry2: ""
+    /*! selected indicator1 id */
     property string currentIndicator1: ""
+    /*! selected indicator1 name */
     property string currentIndicator1Name: ""
+    /*! selected indicator2 id */
     property string currentIndicator2: ""
+    /*! selected indicator2 name */
     property string currentIndicator2Name: ""
+    /*! used to toggle between country and indicator form */
     property string formswitch: "country"
+    /*! selected yearbegin string between 1965 and 2015 */
     property string yearbegin: ""
+    /*! selected yearend string between 1965 and 2015 */
     property string yearend: ""
+    /*! email of the logged user */
     property string email: ""
+    /*! encrypted password of the logged user */
     property string password: ""
+    /*! authentification token returned after successful login */
     property string auth_token: ""
+    /*! language of the android device = Qt.locale("").name */
     property string language: Qt.locale("").name
     //property string language: Qt.locale("en_EN").name // to test english
+    
+    /*! mean value of serie1 */
     property double mean1: 0.0
+    /*! mean value of serie2 */
     property double mean2: 0.0
+    /*! slope of serie1 */
     property double coeflm1: 0.0
+    /*! slope of serie2 */
     property double coeflm2: 0.0
+    /*! determination of the linear regression for serie1 */
     property double coeflm3_1: 0.0
+    /*! determination of the linear regression for serie2 */
     property double coeflm3_2: 0.0
+    /*! mean variation of serie1 */
     property string meanrate1: ""
+    /*! mean variation of serie2 */
     property string meanrate2: ""
+    /*! correlation between the two series */
     property string cor: ""
 
     Rectangle {
+        /* the banner is composed of a title and left-right arrows, visible or not depending upon the page index */
         id: banner
         height: 60
         border.width: 1
@@ -105,7 +137,7 @@ Rectangle {
             }
         }
     }
-
+    /* the ListView handles the snap and flick Mode of the 4 pages */
     ListView {
         id: root
         width: parent.width
@@ -121,7 +153,8 @@ Rectangle {
         orientation: ListView.Horizontal
         boundsBehavior: Flickable.StopAtBounds
         pressDelay: 1000 //events delivered after 1 sec to be able to drag
-
+        
+        /* the ObjectModel is composed of the 4 models */
         model: ObjectModel {
             Login {
                 id: login

@@ -23,76 +23,8 @@ Rectangle {
         xScale: pinchArea.m_zoom2
         yScale: pinchArea.m_zoom2
     }
-    PinchArea {
-        id: pinchArea
-        pinch.target: rootLogin
-        anchors.fill: parent
-        property real m_x1: 0
-        property real m_y1: 0
-        property real m_y2: 5
-        property real m_x2: rootLogin.width / 2
-        property real m_zoom1: 1
-        property real m_zoom2: 1
-        property real m_max: 2
-        property real m_min: 0.5
-
-        onPinchStarted: {
-            console.log("Pinch Started")
-            m_x1 = scaler.origin.x
-            m_y1 = scaler.origin.y
-            m_x2 = pinch.startCenter.x
-            m_y2 = pinch.startCenter.y
-            rootLogin.x = rootLogin.x + (pinchArea.m_x1-pinchArea.m_x2)*(1-pinchArea.m_zoom1)
-            rootLogin.y = rootLogin.y + (pinchArea.m_y1-pinchArea.m_y2)*(1-pinchArea.m_zoom1)
-        }
-        onPinchUpdated: {
-            console.log("Pinch Updated")
-            m_zoom1 = scaler.xScale
-            var dz = pinch.scale-pinch.previousScale
-            var newZoom = m_zoom1+dz
-            if (newZoom <= m_max && newZoom >= m_min) {
-                m_zoom2 = newZoom
-            }
-        }
-        MouseArea {
-            id: dragArea
-            hoverEnabled: true
-            anchors.fill: parent
-            onWheel: {
-                console.log("Wheel Scrolled1:", pinchArea.m_x1, pinchArea.m_y1, pinchArea.m_x2, pinchArea.m_y2, pinchArea.m_zoom1 )
-                pinchArea.m_x1 = scaler.origin.x
-                pinchArea.m_y1 = scaler.origin.y
-                pinchArea.m_zoom1 = scaler.xScale
-
-                pinchArea.m_x2 = rootLogin.width / 2
-                pinchArea.m_y2 = 5
-                console.log("Wheel Scrolled2:", pinchArea.m_x1, pinchArea.m_y1, pinchArea.m_x2, pinchArea.m_y2, pinchArea.m_zoom1 )
-
-                var newZoom
-                if (wheel.angleDelta.y > 0) {
-                    newZoom = pinchArea.m_zoom1+0.1
-                    if (newZoom <= pinchArea.m_max) {
-                        pinchArea.m_zoom2 = newZoom
-                    } else {
-                        pinchArea.m_zoom2 = pinchArea.m_max
-                    }
-                } else {
-                    newZoom = pinchArea.m_zoom1-0.1
-                    if (newZoom >= pinchArea.m_min) {
-                        pinchArea.m_zoom2 = newZoom
-                    } else {
-                        pinchArea.m_zoom2 = pinchArea.m_min
-                    }
-                }
-                rootLogin.x = rootLogin.x + (pinchArea.m_x1-pinchArea.m_x2)*(1-pinchArea.m_zoom1)
-                rootLogin.y = rootLogin.y + (pinchArea.m_y1-pinchArea.m_y2)*(1-pinchArea.m_zoom1)
-            }
-            MouseArea {
-                anchors.fill: parent
-                onClicked: console.log("Click in child")
-            }
-        }
-    }
+    
+    EsoodPinchArea { id: pinchArea }
 
     Row {
         id: emailRow

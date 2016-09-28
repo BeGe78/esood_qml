@@ -1,0 +1,15 @@
+include(/opt/Qt/5.7/android_armv7/doc/global/qt-module-defaults.qdocconf)
+project                 = esood
+description             = ESoOD Reference Documentation
+version                 = $QT_VERSION
+outputdir  =    ./doc/html
+outputformats = HTML
+HTML.stylesheets += ./offline.css
+HTML.templatedir += ./doc/html/template
+indexes = ./esood.index
+headerdirs  += .
+sourcedirs  += .
+sourcedirs  += ./content
+imagedirs   += ./images
+sources.fileextensions = "*.cpp *.qdoc *.mm *.qml"
+headers.fileextensions = "*.h *.ch *.h++ *.hh *.hpp *.hxx"

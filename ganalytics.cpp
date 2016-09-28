@@ -19,6 +19,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 //=============================================================================
+/*!
+    \class GoogleAnalytics
+    \brief The GoogleAnalytics class is used by QML to interface Google Analytics for hits and events
+    \inmodule esood
+    \ingroup esood 
+*/
 
 #include "ganalytics.h"
 #include <QDebug>
@@ -47,17 +53,29 @@ GoogleAnalytics::~GoogleAnalytics()
 {
     delete _pAnalytics;
 }
-
+/*!
+    \fn void GoogleAnalytics::initTracker()
+    
+    Initialize the GA tracker
+*/
 void GoogleAnalytics::initTracker()
 {
     _pAnalytics->initTracker();
 }
-
+/*!
+    \fn void GoogleAnalytics::sendHit(const QString &screenName)
+    
+    Send hit information to GA relative to \a screenName
+*/
 void GoogleAnalytics::sendHit(const QString &screenName)
 {
     _pAnalytics->sendHit(screenName);
 }
-
+/*!
+    \fn void GoogleAnalytics::sendEvent(const QString &category, const QString &action, const QString &label, long value)
+    
+    Send an event message to GA with 3 information: \a category, \a action and \a label plus a \a value
+*/
 void GoogleAnalytics::sendEvent(const QString &category, const QString &action, const QString &label, long value)
 {
     qDebug() << value;

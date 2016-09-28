@@ -48,7 +48,7 @@
 <context>
     <name>ParametersChoice</name>
     <message>
-        <location filename="content/ParametersChoice.qml" line="118"/>
+        <location filename="content/ParametersChoice.qml" line="120"/>
         <source>Year Begin:</source>
         <translation>Year Begin:</translation>
     </message>
@@ -58,22 +58,22 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="content/ParametersChoice.qml" line="150"/>
+        <location filename="content/ParametersChoice.qml" line="152"/>
         <source>Year End: </source>
         <translation>Year End: </translation>
     </message>
     <message>
-        <location filename="content/ParametersChoice.qml" line="189"/>
+        <location filename="content/ParametersChoice.qml" line="191"/>
         <source>Countries</source>
         <translation>Countries</translation>
     </message>
     <message>
-        <location filename="content/ParametersChoice.qml" line="206"/>
+        <location filename="content/ParametersChoice.qml" line="210"/>
         <source>Indicators</source>
         <translation>Indicators</translation>
     </message>
     <message>
-        <location filename="content/ParametersChoice.qml" line="290"/>
+        <location filename="content/ParametersChoice.qml" line="400"/>
         <source>Update</source>
         <translation>Update</translation>
     </message>
@@ -84,6 +84,44 @@
         <location filename="content/SelectorsChartView.qml" line="135"/>
         <source>Year</source>
         <translation>Year</translation>
+    </message>
+</context>
+<context>
+    <name>SelectorsStatView</name>
+    <message>
+        <location filename="content/SelectorsStatView.qml" line="177"/>
+        <source>Country</source>
+        <translation>Country</translation>
+    </message>
+    <message>
+        <location filename="content/SelectorsStatView.qml" line="177"/>
+        <source>Indicator</source>
+        <translation type="unfinished">Indicator</translation>
+    </message>
+    <message>
+        <location filename="content/SelectorsStatView.qml" line="185"/>
+        <source>Mean</source>
+        <translation>Mean</translation>
+    </message>
+    <message>
+        <location filename="content/SelectorsStatView.qml" line="193"/>
+        <source>Slope</source>
+        <translation>Slope</translation>
+    </message>
+    <message>
+        <location filename="content/SelectorsStatView.qml" line="201"/>
+        <source>Determination</source>
+        <translation>Determination</translation>
+    </message>
+    <message>
+        <location filename="content/SelectorsStatView.qml" line="209"/>
+        <source>Meanrate</source>
+        <translation>Mean rate</translation>
+    </message>
+    <message>
+        <location filename="content/SelectorsStatView.qml" line="217"/>
+        <source>Correlation</source>
+        <translation>Correlation</translation>
     </message>
 </context>
 </TS>
