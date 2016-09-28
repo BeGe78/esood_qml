@@ -1,12 +1,16 @@
-/*
-@copyright GNU GENERAL PUBLIC LICENSE  
- Version 3, 29 June 2007
-*/
-
 import QtQuick 2.7
 import QtCharts 2.1
 import "."
+/*!
+\qmltype SelectorsChartView
 
+\brief Dipslay the chart corresponding to the selected parameters.
+\section2 Licensing
+\legalese
+@copyright GNU GENERAL PUBLIC LICENSE  
+ Version 3, 29 June 2007
+\endlegalese
+*/
 Rectangle {
     id: root
     width: 320
@@ -21,17 +25,29 @@ Rectangle {
         xScale: pinchArea.m_zoom2
         yScale: pinchArea.m_zoom2
     }
+    /*! title of the chart return by the API */
     property string charttitle: ""
+    /*! legend of serie1 return by the API */
     property string legend1: ""
+    /*! legend of serie2 return by the API */
     property string legend2: ""
+    /*! true of both series have same scale return by the API */
     property bool same_scale: true
+    /*! unit of serie1 return by the API */
     property string unit: ""
+    /*! unit of serie2 return by the API */
     property string unit2: ""
+    /*! highest value of serie1 return by the API */
     property int highvalue: 0
+    /*! lowest value of serie1 return by the API */
     property int lowvalue: 0
+    /*! highest value of serie2 return by the API */
     property int highvalue2: 0
+    /*! lowest value of serie2 return by the API */
     property int lowvalue2: 0
+    /*! number of ticks for the Y axis return by the API */
     property int nbYticks: 0
+    /*! number of ticks for the X axis return by the API */
     property int nbXticks: 0
     
     EsoodPinchArea { id: pinchArea }
@@ -116,7 +132,10 @@ Rectangle {
             axisYRight: axisYb
         }
     }
-    
+    /*!
+        \qmlmethod drawChart()
+        AJAX post to create the chart via the ESoOD API
+    */
     function drawChart() {
         var req = "https://bege.hd.free.fr/api/v1/selectors.json";
         if (!req)

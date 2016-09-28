@@ -1,15 +1,23 @@
-/*
-@copyright GNU GENERAL PUBLIC LICENSE  
- Version 3, 29 June 2007
-*/
-
 import QtQuick 2.7
 import QtQuick.Controls 1.2
 import "."
+/*!
+\qmltype Login
 
+\brief Login screen asking for the email and the password
+ 
+Please note that the registration/subscription is handled only on the browser interface and not on the android interface.
+\section2 Licensing
+\legalese
+@copyright GNU GENERAL PUBLIC LICENSE  
+ Version 3, 29 June 2007
+\endlegalese
+*/
 Rectangle {
     id: rootLogin
+    /*! switch between login and logout */
     property string loginSwitch: "login"
+    /*! this signal handles the success of the login */
     signal loginok
     width: 320
     height: 410
@@ -136,7 +144,11 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
         font.pixelSize: 12
     }
-
+    /*!
+        \qmlmethod postSession()
+        AJAX post to create the session via ESoOD API.
+        An authentification token is given.
+    */
     function postSession() {
         var req = "https://bege.hd.free.fr/api/v1/sessions.json";
         var xhr = new XMLHttpRequest;
@@ -165,7 +177,10 @@ Rectangle {
         xhr.send(JSON.stringify({user:{email:emailTextInput.text, password:passwordTextInput.text}}));
         console.log("login user JSON.stringify", JSON.stringify({user:{email:emailTextInput.text, password:passwordTextInput.text}}));
     }
-    
+    /*!
+        \qmlmethod deleteSession()
+        AJAX delete to destroy the session via ESoOD API
+    */
     function deleteSession() {
         var req = "https://bege.hd.free.fr/api/v1/sessions.json";
         var xhr = new XMLHttpRequest;

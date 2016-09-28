@@ -1,17 +1,21 @@
-/*
-@copyright GNU GENERAL PUBLIC LICENSE  
- Version 3, 29 June 2007
- 
-Standard Button declarative 
-*/
-
 import QtQuick 2.7
 import "."
-
+/*!
+\qmltype Button
+\brief Declarative for standard button.
+\section2 Licensing
+\legalese
+@copyright GNU GENERAL PUBLIC LICENSE  
+ Version 3, 29 June 2007
+\endlegalese
+*/ 
 Rectangle {
     id: button
+    /*! /internal */
     signal clicked
+    /*! /internal */
     property alias text: txt.text
+    /*! /internal */
     property bool buttonEnabled: false
     width: Math.max(64, txt.width + 16)
     height: 32

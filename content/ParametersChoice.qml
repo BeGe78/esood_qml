@@ -1,22 +1,17 @@
-
-
 import QtQuick 2.7
 import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Controls.Private 1.0
 import "."
 /*!
- \qmltype ParametersChoice
- \inqmlmodule esood
- \brief ESoOd parameters choice screen composed of years, indicators and countries.
- 
-The application GUI is composed of a fix banner and 4 flickable pages implemented with a ListView:
-    - Login
-    - Parameters selection
-    - Chart 
-    - Statistics
-Each page supports zoom (mouse wheel or pinch).
-The last 2 pages support horizontal and vertical drag.
+\qmltype ParametersChoice
+
+\brief ESoOd parameters choice screen composed of years, indicators and countries.
+\section2 Licensing
+\legalese
+@copyright GNU GENERAL PUBLIC LICENSE  
+ Version 3, 29 June 2007
+\endlegalese 
 */
 Rectangle {
     id: root
@@ -167,9 +162,7 @@ Rectangle {
             }
         }
     }
-/*!
- \enum QComboBox::indicator1Combo
- */
+
     ComboBox {
         id: indicator1Combo
         width: 350

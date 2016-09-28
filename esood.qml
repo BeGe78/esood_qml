@@ -5,15 +5,7 @@ import "./content"
 
 /*!
 \qmltype esood
-
-\brief entry of the ESoOD project qml interface
-
-    
-\legalese
-@copyright GNU GENERAL PUBLIC LICENSE  
- Version 3, 29 June 2007
-\endlegalese
- 
+\brief entry of the ESoOD project qml interface 
 The application GUI is composed of a fix banner with directional arrows and 4 flickable pages implemented with a ListView:
     \list
         \li Login
@@ -23,6 +15,11 @@ The application GUI is composed of a fix banner with directional arrows and 4 fl
     \endlist
 Each page supports zoom (mouse wheel or pinch).
 The last 2 pages support horizontal and vertical drag.
+\section2 Licensing    
+\legalese
+@copyright GNU GENERAL PUBLIC LICENSE  
+ Version 3, 29 June 2007
+\endlegalese
 */
 Rectangle {
     id: mainRect

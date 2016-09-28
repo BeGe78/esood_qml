@@ -1,13 +1,17 @@
-/*
-@copyright GNU GENERAL PUBLIC LICENSE  
- Version 3, 29 June 2007
-*/
-
 import QtQuick 2.7
 import QtCharts 2.1
 import QtQuick.Controls 1.4
 import "."
+/*!
+\qmltype SelectorsStatView
 
+\brief SelectorsStatView
+\section2 Licensing
+\legalese
+@copyright GNU GENERAL PUBLIC LICENSE  
+ Version 3, 29 June 2007
+\endlegalese
+*/
 Rectangle {
     id: root
     width: 320
@@ -158,7 +162,10 @@ Rectangle {
     ListModel {
         id: statModel
     }
-
+    /*!
+        \qmlmethod drawStat()
+        Fills the stat table with value passed as properties in esood.qml.
+    */
     function drawStat() {
         statModel.clear();
         statModel.append({

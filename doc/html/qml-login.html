@@ -3,8 +3,8 @@
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- ParametersChoice.qml -->
-  <title>ParametersChoice QML Type | Qt 5.7</title>
+<!-- Login.qml -->
+  <title>Login QML Type | Qt 5.7</title>
   <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
   <script type="text/javascript">
     window.onload = function(){document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");};
@@ -29,71 +29,89 @@
 <h3><a name="toc">Contents</a></h3>
 <ul>
 <li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
 <li class="level1"><a href="#methods">Methods</a></li>
 <li class="level1"><a href="#details">Detailed Description</a></li>
 <li class="level2"><a href="#licensing">Licensing</a></li>
 </ul>
 </div>
 <div class="sidebar-content" id="sidebar-content"></div></div>
-<h1 class="title">ParametersChoice QML Type</h1>
+<h1 class="title">Login QML Type</h1>
 <span class="subtitle"></span>
-<!-- $$$ParametersChoice-brief -->
-<p>ESoOd parameters choice screen composed of years, indicators and countries. <a href="#details">More...</a></p>
-<!-- @@@ParametersChoice -->
+<!-- $$$Login-brief -->
+<p>Login screen asking for the email and the password <a href="#details">More...</a></p>
+<!-- @@@Login -->
 <div class="table"><table class="alignedsummary">
 <tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import  </td></tr></table></div><ul>
-<li><a href="qml-parameterschoice-members.html">List of all members, including inherited members</a></li>
+<li><a href="qml-login-members.html">List of all members, including inherited members</a></li>
 </ul>
 <a name="properties"></a>
 <h2 id="properties">Properties</h2>
 <ul>
-<li class="fn"><b><b><a href="qml-parameterschoice.html#email-prop">email</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-login.html#loginSwitch-prop">loginSwitch</a></b></b> : string</li>
+</ul>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-login.html#loginok-signal">loginok</a></b></b>()</li>
 </ul>
 <a name="methods"></a>
 <h2 id="methods">Methods</h2>
 <ul>
-<li class="fn"><b><b><a href="qml-parameterschoice.html#getCountries-method">getCountries</a></b></b>()</li>
-<li class="fn"><b><b><a href="qml-parameterschoice.html#getIndicators-method">getIndicators</a></b></b>()</li>
+<li class="fn"><b><b><a href="qml-login.html#deleteSession-method">deleteSession</a></b></b>()</li>
+<li class="fn"><b><b><a href="qml-login.html#postSession-method">postSession</a></b></b>()</li>
 </ul>
-<!-- $$$ParametersChoice-description -->
+<!-- $$$Login-description -->
 <a name="details"></a>
 <h2 id="details">Detailed Description</h2>
 </p>
+<p>Please note that the registration/subscription is handled only on the browser interface and not on the android interface.</p>
 <a name="licensing"></a>
 <h3 >Licensing</h3>
 <div class="LegaleseLeft"><p>@copyright GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007</p>
-</div><!-- @@@ParametersChoice -->
+</div><!-- @@@Login -->
 <h2>Property Documentation</h2>
-<!-- $$$email -->
+<!-- $$$loginSwitch -->
 <div class="qmlitem"><div class="qmlproto">
 <div class="table"><table class="qmlname">
-<tr valign="top" class="odd" id="email-prop">
+<tr valign="top" class="odd" id="loginSwitch-prop">
 <td class="tblQmlPropNode"><p>
-<a name="email-prop"></a><span class="name">email</span> : <span class="type">string</span></p></td></tr>
+<a name="loginSwitch-prop"></a><span class="name">loginSwitch</span> : <span class="type">string</span></p></td></tr>
 </table></div>
-</div><div class="qmldoc"><p>email for registered and connected user</p>
-</div></div><!-- @@@email -->
+</div><div class="qmldoc"><p>switch between login and logout</p>
+</div></div><!-- @@@loginSwitch -->
+<br/>
+<h2>Signal Documentation</h2>
+<!-- $$$loginok -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="loginok-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="loginok-signal"></a><span class="name">loginok</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>this signal handles the success of the login</p>
+</div></div><!-- @@@loginok -->
 <br/>
 <h2>Method Documentation</h2>
-<!-- $$$getCountries -->
+<!-- $$$deleteSession -->
 <div class="qmlitem"><div class="qmlproto">
 <div class="table"><table class="qmlname">
-<tr valign="top" class="odd" id="getCountries-method">
+<tr valign="top" class="odd" id="deleteSession-method">
 <td class="tblQmlFuncNode"><p>
-<a name="getCountries-method"></a><span class="name">getCountries</span>()</p></td></tr>
+<a name="deleteSession-method"></a><span class="name">deleteSession</span>()</p></td></tr>
 </table></div>
-</div><div class="qmldoc"><p>Retrieves the countries from the Worldbank database</p>
-</div></div><!-- @@@getCountries -->
+</div><div class="qmldoc"><p>AJAX delete to destroy the session via ESoOD API</p>
+</div></div><!-- @@@deleteSession -->
 <br/>
-<!-- $$$getIndicators -->
+<!-- $$$postSession -->
 <div class="qmlitem"><div class="qmlproto">
 <div class="table"><table class="qmlname">
-<tr valign="top" class="odd" id="getIndicators-method">
+<tr valign="top" class="odd" id="postSession-method">
 <td class="tblQmlFuncNode"><p>
-<a name="getIndicators-method"></a><span class="name">getIndicators</span>()</p></td></tr>
+<a name="postSession-method"></a><span class="name">postSession</span>()</p></td></tr>
 </table></div>
-</div><div class="qmldoc"><p>Retrieves the indicators from the Worldbank database</p>
-</div></div><!-- @@@getIndicators -->
+</div><div class="qmldoc"><p>AJAX post to create the session via ESoOD API. An authentification token is given.</p>
+</div></div><!-- @@@postSession -->
 <br/>
         </div>
        </div>

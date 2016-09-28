@@ -1,24 +1,34 @@
-/*
-@copyright GNU GENERAL PUBLIC LICENSE  
- Version 3, 29 June 2007
-*/
-
 import QtQuick 2.7
 import QtQuick.Controls 1.4
 import "."
-
-    
+/*!
+\qmltype EsoodPinchArea
+\brief Declarative of the pinch area and mouse area used in the different screens
+\section2 Licensing
+\legalese
+@copyright GNU GENERAL PUBLIC LICENSE  
+ Version 3, 29 June 2007
+\endlegalese
+*/    
     PinchArea {
         id: pinchArea
         pinch.target: root
         anchors.fill: parent
+        /*! starting x position */
         property real m_x1: 0
+        /*! starting y position */
         property real m_y1: 0
-        property real m_y2: 0
+        /*! ending x position */
         property real m_x2: 0
+        /*! ending y position */
+        property real m_y2: 0
+        /*! initial zoom factor */
         property real m_zoom1: 1
+        /*! final zoom factor */
         property real m_zoom2: 1
+        /*! maximum zoom factor */
         property real m_max: 2
+        /*! minimum zoom factor */
         property real m_min: 0.5
 
         onPinchStarted: {

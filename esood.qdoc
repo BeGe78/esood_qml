@@ -3,19 +3,32 @@
 \title ESoOD QML overview
  
 \section1 Introduction
-These documents describe the Android interface to ESoOD services.
-    
-    
-\section1 References
-    \list
-        \li \l{esood}
-        \li \l{GoogleAnalytics}
-        \li \l{ParametersChoice}
-    \endlist
-    
+These documents describe the Android interface to ESoOD. ESoOD is a Ruby on Rails application providing statistical graph and analysis relative to the World Bank Open Data set.
+\section2 Licensing
 \legalese
 @copyright GNU GENERAL PUBLIC LICENSE  
  Version 3, 29 June 2007
 \endlegalese
+
+\section1 C++ Classes
+    \list
+        \li \l{GoogleAnalytics}
+    \endlist    
+    
+\section1 QML screens
+    \list
+        \li \l{esood}
+        \li \l{Login}
+        \li \l{ParametersChoice}
+        \li \l{SelectorsChartView}
+        \li \l{SelectorsStatView}        
+    \endlist
+    
+\section1 QML types
+    \list
+        \li \l{Button}
+        \li \l{Settings}
+        \li \l{EsoodPinchArea}        
+    \endlist    
 */
 
