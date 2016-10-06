@@ -5,8 +5,10 @@
         <file>content/images/down-arrow.png</file>
         <file>content/images/icon-left-arrow.png</file>
         <file>content/images/icon-right-arrow.png</file>
+        <file>content/images/question_mark.png</file>
         <file>content/Button.qml</file>
         <file>content/EsoodPinchArea.qml</file>
+        <file>content/TextTemplate.qml</file>
         <file>content/Login.qml</file>
         <file>content/ParametersChoice.qml</file>
         <file>content/SelectorsChartView.qml</file>

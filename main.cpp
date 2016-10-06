@@ -1,4 +1,3 @@
-
 #include <QtWidgets/QApplication>
 #include <QtQuick/QQuickView>
 #include <QtCore/QDir>
@@ -27,6 +26,7 @@ int main(int argc, char *argv[])
     viewer.rootContext()->setContextProperty("gAnalytics", &ganalytics);
     
     QObject::connect(viewer.engine(), &QQmlEngine::quit, &viewer, &QWindow::close);
+    
     QTranslator qtTranslator;
     qtTranslator.load("esood_" + QLocale::system().name(), ":/");
     //qtTranslator.load("esood_en", ":/"); // to test english

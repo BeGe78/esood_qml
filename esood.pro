@@ -33,6 +33,13 @@ DISTFILES += \
     android/res/values/libs.xml \
     android/build.gradle \
     android/gradle/wrapper/gradle-wrapper.properties \
-    android/gradlew.bat
+    android/gradlew.bat \
+    ../../../../home/workspace/android/esood/android/AndroidManifest.xml \
+    ../../../../home/workspace/android/esood/android/gradle/wrapper/gradle-wrapper.jar \
+    ../../../../home/workspace/android/esood/android/gradlew \
+    ../../../../home/workspace/android/esood/android/res/values/libs.xml \
+    ../../../../home/workspace/android/esood/android/build.gradle \
+    ../../../../home/workspace/android/esood/android/gradle/wrapper/gradle-wrapper.properties \
+    ../../../../home/workspace/android/esood/android/gradlew.bat
 
 

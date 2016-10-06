@@ -1,5 +1,6 @@
 import QtQuick 2.7
 import QtQuick.Controls 1.2
+import QtQuick.Dialogs 1.2
 import "."
 /*!
 \qmltype Login
@@ -126,6 +127,33 @@ Rectangle {
                 postSession();
             } else {
                 deleteSession();
+            }
+        }
+    }
+    Image {
+        id: question_mark
+        width: 50
+        height: 50
+        anchors.leftMargin: 20
+        fillMode: Image.PreserveAspectFit
+        source: "./images/question_mark.png"
+        anchors.left: loginButton.right
+        anchors.verticalCenter: loginButton.verticalCenter
+        MouseArea {
+            anchors.fill: parent
+            //onClicked: connexionHelp.open();
+            onPressed: connexionHelp.open();
+            onReleased: connexionHelp.close();
+        }
+    }
+    Dialog {
+        id: connexionHelp
+        contentItem: Rectangle {
+            color: "white"
+            implicitWidth: 400
+            implicitHeight: 100
+            TextTemplate {
+                label: qsTr("connexionhelp")
             }
         }
     }

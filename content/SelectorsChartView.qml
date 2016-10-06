@@ -65,15 +65,17 @@ Rectangle {
         height: root.height
         x: 0
         y: 0   // making this item draggable, so don't use anchors
-        antialiasing: true
+        antialiasing: true        
         MouseArea {
             anchors.fill: parent
             drag.target: selectorChart
             drag.axis: Drag.XAndYAxis
+            /*
             drag.minimumX: parent.width - box.width
             drag.maximumX: box.width - parent.width
             drag.minimumY: parent.height - box.height
             drag.maximumY: box.height - parent.height
+            */
         }
 
         ValueAxis {

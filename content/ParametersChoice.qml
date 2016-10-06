@@ -2,6 +2,7 @@ import QtQuick 2.7
 import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Controls.Private 1.0
+import QtQuick.Dialogs 1.2
 import "."
 /*!
 \qmltype ParametersChoice
@@ -45,7 +46,7 @@ Rectangle {
     Row {
         id: yearRow
         anchors.top: parent.top
-        width: (yearBeginText.width + yearBeginTextInputRectangle.width + 10) * 2
+        width: (yearBeginText.width + yearBeginTextInputRectangle.width + 15) * 2
         height: yearBeginText.height + 10
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.topMargin: 9
@@ -115,11 +116,36 @@ Rectangle {
                 onEditingFinished: mainRect.yearend = yearEndTextInput.text
             }
         }
+        Image {
+            id: year_question_mark
+            width: 30
+            height: 30
+            anchors.leftMargin: 20
+            fillMode: Image.PreserveAspectFit
+            source: "./images/question_mark.png"
+            MouseArea {
+                anchors.fill: parent
+                //onClicked: yearHelp.open();
+                onPressed: yearHelp.open();
+                onReleased: yearHelp.close();
+            }
+        }
+        Dialog {
+            id: yearHelp
+            contentItem: Rectangle {
+                color: "white"
+                implicitWidth: 400
+                implicitHeight: 100
+                TextTemplate {
+                    label: qsTr("yearhelp")
+                }
+            }
+        }
     }
     Row {
         id: buttonRow
         anchors.top: yearRow.bottom
-        width: countriesButton.width + indicatorsButton.width + 50
+        width: countriesButton.width + indicatorsButton.width + 40
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.topMargin: 9
         spacing: 40
@@ -139,7 +165,6 @@ Rectangle {
                 country1Combo.anchors.topMargin = 15
                 countriesButton.color = "#286090";
                 mainRect.formswitch = "country";
-                console.log("GA sendEvent");
                 //gAnalytics.sendEvent("Category", "Action", "Label", 1);
             }
         }
@@ -157,8 +182,32 @@ Rectangle {
                 country1Combo.anchors.topMargin = 65
                 countriesButton.color = "#337ABF";
                 mainRect.formswitch = "indicator";
-                console.log("GA sendHit");
                 gAnalytics.sendHit("myView");
+            }
+        }
+        Image {
+            id: button_question_mark
+            width: 30
+            height: 30
+            anchors.leftMargin: 20
+            fillMode: Image.PreserveAspectFit
+            source: "./images/question_mark.png"
+            MouseArea {
+                anchors.fill: parent
+                //onClicked: buttonHelp.open();
+                onPressed: buttonHelp.open();
+                onReleased: buttonHelp.close();
+            }
+        }
+        Dialog {
+            id: buttonHelp
+            contentItem: Rectangle {
+                color: "white"
+                implicitWidth: 400
+                implicitHeight: 100
+                TextTemplate {
+                    label: qsTr("buttonhelp")
+                }
             }
         }
     }

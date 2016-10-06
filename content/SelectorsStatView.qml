@@ -1,6 +1,6 @@
 import QtQuick 2.7
-import QtCharts 2.1
 import QtQuick.Controls 1.4
+import QtQuick.Controls.Styles 1.4
 import "."
 /*!
 \qmltype SelectorsStatView
@@ -30,132 +30,142 @@ Rectangle {
     EsoodPinchArea { id: pinchArea }
 
     Rectangle {
-        id: rectangleTitle
-        width: root.width - 20
-        height: 20
-        color: "#ffffff"
-        anchors.horizontalCenterOffset: 10
-        anchors.top: parent.top
-        anchors.topMargin: 10
-        anchors.horizontalCenter: parent.horizontalCenter
-        Text {
-            id: title
-            text: (mainRect.formswitch == "indicator") ? mainRect.currentCountry1 : mainRect.currentIndicator1Name
-            font.pixelSize: 14
+        id: rectangle
+        width: root.width
+        height: root.height
+        x: 0
+        y: 0   // making this item draggable, so don't use anchors
+        antialiasing: true        
+        MouseArea {
+            anchors.fill: parent
+            drag.target: rectangle
+            drag.axis: Drag.XAndYAxis
+            onClicked: console.log("Click in rectangle")
+            drag.filterChildren: false
         }
-    }
-    TableView {
-        id: selectorStat
-        width: root.width - 20
-        anchors.horizontalCenter: parent.horizontalCenter
-        frameVisible: true
-        alternatingRowColors: false
-        backgroundVisible: true
-        anchors.top: rectangleTitle.bottom
-        anchors.topMargin: 20
-        model: statModel
-        headerDelegate: Rectangle {
-            height: textItem.implicitHeight * 1.2
-            width: textItem.implicitWidth
-            color: "lightsteelblue"
+        Rectangle {
+            id: rectangleTitle
+            width: root.width - 20
+            x: rectangle.x + 10
+            y: rectangle.y + 10
+            height: 20
+            color: "#ffffff"
             Text {
-                id: textItem
+                id: title
+                text: (mainRect.formswitch == "indicator") ? mainRect.currentCountry1 : mainRect.currentIndicator1Name
+                font.pixelSize: 18
+            }
+        }
+        TableView {
+            id: selectorStat
+            width: root.width - 20
+            height: 200
+            x: rectangle.x + 10
+            y: rectangle.y + 40
+            frameVisible: true
+            alternatingRowColors: false
+            backgroundVisible: true
+            model: statModel
+            MouseArea {
                 anchors.fill: parent
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: styleData.textAlignment
-                anchors.leftMargin: 2
-                text: styleData.value
-                font: Qt.font({ pixelSize: 16 })
-                //elide: Text.ElideRight
-                renderType: Text.NativeRendering
+                propagateComposedEvents: true
+                drag.target: rectangle
+                drag.axis: Drag.XAndYAxis
+                onClicked: {
+                    console.log("clicked selectorStat")
+                    console.log("table height : ",selectorStat.height)
+                    mouse.accepted = false
+                }
             }
-            Rectangle {
-                anchors.right: parent.right
-                anchors.top: parent.top
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 1
-                anchors.topMargin: 1
-                width: 1
-                color: "#ccc"
+            headerDelegate: Rectangle {
+                id: tablehead
+                height: textItem.implicitHeight * 1.2
+                width: textItem.implicitWidth
+                color: "lightsteelblue"                
+                Text {
+                    id: textItem
+                    anchors.fill: parent
+                    text: styleData.value
+                    elide: Text.ElideRight
+                    font: Qt.font({ pixelSize: 18 })
+                    renderType: Text.NativeRendering
+                }
             }
-        }
-        rowDelegate: Rectangle {
-           height: 60
-           SystemPalette {
-              id: myPalette;
-              colorGroup: SystemPalette.Active
-           }
-           color: {
-              var baseColor = styleData.alternate?myPalette.alternateBase:myPalette.base
-              return styleData.selected?myPalette.highlight:baseColor
-           }
-           scale: 0.01
-        }
-        itemDelegate: Item {
-            height: Math.max(60, label.implicitHeight)
-            property int implicitWidth: label.implicitWidth + 20
-
-            TextArea {
-                id: label
-                objectName: "label"
-                width: parent.width
-                height: parent.height
-                anchors.leftMargin: 12
-                anchors.left: parent.left
-                anchors.right: parent.right
-                horizontalAlignment: styleData.textAlignment
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.verticalCenterOffset: 1
-                text: styleData.value !== undefined ? styleData.value : ""
+            rowDelegate: Rectangle {
+               id: tablerow
+               height: 90
+               SystemPalette {
+                  id: myPalette;
+                  colorGroup: SystemPalette.Active
+               }
+               color: {
+                  var baseColor = styleData.alternate?myPalette.alternateBase:myPalette.base
+                  return styleData.selected?myPalette.highlight:baseColor
+               }
+               scale: 0.01
             }
-        }
-        TableViewColumn {
-            id: countryColumn
-            title: mainRect.formswitch == "country" ? qsTr("Country") : qsTr("Indicator")
-            role: "formswitch"
-            movable: false
-            resizable: true
-            width: (selectorStat.viewport.width / 8) * 3
-        }
-        TableViewColumn {
-            id: meanColumn
-            title: qsTr("Mean")
-            role: "mean"
-            movable: false
-            resizable: true
-            width: selectorStat.viewport.width / 8
-        }
-        TableViewColumn {
-            id: slopeColumn
-            title: qsTr("Slope")
-            role: "slope"
-            movable: false
-            resizable: true
-            width: selectorStat.viewport.width / 8
-        }
-        TableViewColumn {
-            id: determinationColumn
-            title: qsTr("Determination")
-            role: "determination"
-            movable: false
-            resizable: true
-            width: selectorStat.viewport.width / 8
-        }
-        TableViewColumn {
-            id: meanrateColumn
-            title: qsTr("Meanrate")
-            role: "meanrate"
-            movable: false
-            resizable: true
-            width: selectorStat.viewport.width / 8
-        }
-        TableViewColumn {
-            id: correlationColumn
-            title: qsTr("Correlation")
-            role: "correlation"
-            movable: false
-            resizable: true
-            width: selectorStat.viewport.width / 8
+            itemDelegate: Item {
+                height: Math.max(60, label.implicitHeight)
+                property int implicitWidth: label.implicitWidth + 20
+    
+                Label {
+                    id: label
+                    objectName: "label"
+                    width: parent.width
+                    height: parent.height
+                    wrapMode: Text.WordWrap
+                    //horizontalAlignment: styleData.textAlignment
+                    text: styleData.value !== undefined ? styleData.value : ""
+                }
+            }
+            TableViewColumn {
+                id: countryColumn
+                title: mainRect.formswitch == "country" ? qsTr("Country") : qsTr("Indicator")
+                role: "formswitch"
+                movable: true
+                resizable: false
+                width: (selectorStat.viewport.width / 8) * 3
+            }
+            TableViewColumn {
+                id: meanColumn
+                title: qsTr("Mean")
+                role: "mean"
+                movable: true
+                resizable: false
+                width: selectorStat.viewport.width / 8
+            }
+            TableViewColumn {
+                id: slopeColumn
+                title: qsTr("Slope")
+                role: "slope"
+                movable: true
+                resizable: false
+                width: selectorStat.viewport.width / 8
+            }
+            TableViewColumn {
+                id: determinationColumn
+                title: qsTr("Determination")
+                role: "determination"
+                movable: true
+                resizable: false
+                width: selectorStat.viewport.width / 8
+            }
+            TableViewColumn {
+                id: meanrateColumn
+                title: qsTr("Meanrate")
+                role: "meanrate"
+                movable: true
+                resizable: false
+                width: selectorStat.viewport.width / 8
+            }
+            TableViewColumn {
+                id: correlationColumn
+                title: qsTr("Correlation")
+                role: "correlation"
+                movable: true
+                resizable: false
+                width: selectorStat.viewport.width / 8
+            }
         }
     }
 

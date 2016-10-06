@@ -1,6 +1,7 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.0
 import QtQml.Models 2.1
+import QtQuick.Dialogs 1.2
 import "./content"
 
 /*!
@@ -92,6 +93,32 @@ Rectangle {
         }
         anchors.top: parent.top        
         width: parent.width
+        Image {
+            id: question_mark
+            width: 50
+            height: 50
+            anchors.leftMargin: 20
+            fillMode: Image.PreserveAspectFit
+            source: "./content/images/question_mark.png"
+            anchors.left: esood.right
+            anchors.verticalCenter: banner.verticalCenter
+            MouseArea {
+                anchors.fill: parent
+                onPressed: esoodHelp.open();
+                onReleased: esoodHelp.close();
+            }
+        }
+        Dialog {
+            id: esoodHelp
+            contentItem: Rectangle {
+                color: "white"
+                implicitWidth: 400
+                implicitHeight: 280
+                TextTemplate {
+                    label: qsTr("esoodhelp")
+                }
+            }
+        }
         Image {
             id: left_arrow
             source: "./content/images/icon-left-arrow.png"

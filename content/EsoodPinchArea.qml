@@ -57,14 +57,14 @@ import "."
             drag.axis: Drag.XAndYAxis
             drag.filterChildren: true
             onWheel: {
-                console.log("Wheel Scrolled1:", pinchArea.m_x1, pinchArea.m_y1, pinchArea.m_x2, pinchArea.m_y2, pinchArea.m_zoom1 )      
+                console.log("Wheel Scrolled1:", pinchArea.m_x1, pinchArea.m_y1, pinchArea.m_x2, pinchArea.m_y2, pinchArea.m_zoom1, root.x, root.y, mouseX, mouseY )      
                 pinchArea.m_x1 = scaler.origin.x
                 pinchArea.m_y1 = scaler.origin.y
                 pinchArea.m_zoom1 = scaler.xScale
 
                 pinchArea.m_x2 = mouseX
                 pinchArea.m_y2 = mouseY
-                console.log("Wheel Scrolled2:", pinchArea.m_x1, pinchArea.m_y1, pinchArea.m_x2, pinchArea.m_y2, pinchArea.m_zoom1 )
+                console.log("Wheel Scrolled2:", pinchArea.m_x1, pinchArea.m_y1, pinchArea.m_x2, pinchArea.m_y2, pinchArea.m_zoom1, pinchArea.m_zoom2 )
 
                 var newZoom
                 if (wheel.angleDelta.y > 0) {
@@ -84,6 +84,7 @@ import "."
                 }
                 root.x = root.x + (pinchArea.m_x1-pinchArea.m_x2)*(1-pinchArea.m_zoom1)
                 root.y = root.y + (pinchArea.m_y1-pinchArea.m_y2)*(1-pinchArea.m_zoom1)
+                console.log("Wheel Scrolled3:", pinchArea.m_x1, pinchArea.m_y1, pinchArea.m_x2, pinchArea.m_y2, pinchArea.m_zoom1, root.x, root.y, mouseX, mouseY  )
             }
             MouseArea {
                 anchors.fill: parent
