@@ -56,7 +56,7 @@
             <contents name="licensing" title="Licensing" level="2"/>
             <qmlproperty threadsafety="unspecified" name="fontFamily" fullname="Settings::fontFamily" href="qml-settings.html#fontFamily-prop" status="active" access="public" type="string" attached="false" writable="true"/>
         </qmlclass>
-        <qmlclass threadsafety="unspecified" name="TextTemplate" qml-module-name="TextTemplate" href="qml-texttemplate.html" status="active" access="public" title="TextTemplate" fulltitle="TextTemplate" subtitle="" brief="Declarative for modal help text">
+        <qmlclass threadsafety="unspecified" name="TextTemplate" qml-module-name="TextTemplate" href="qml-texttemplate.html" status="active" access="public" title="TextTemplate" fulltitle="TextTemplate" subtitle="" brief="Declarative for modal help text. The text is wrapped if it is multiline. HTML tags can be inserted ex: &lt;br&gt;">
             <contents name="licensing" title="Licensing" level="2"/>
             <qmlproperty threadsafety="unspecified" name="label" fullname="TextTemplate::label" href="qml-texttemplate.html#label-prop" status="active" access="public" type="string" attached="false" writable="true"/>
             <qmlproperty threadsafety="unspecified" name="paint" fullname="TextTemplate::paint" href="qml-texttemplate.html#paint-prop" status="active" access="public" type="color" attached="false" writable="true"/>

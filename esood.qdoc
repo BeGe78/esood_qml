@@ -26,9 +26,10 @@ These documents describe the Android interface to ESoOD. ESoOD is a Ruby on Rail
     
 \section1 QML types
     \list
-        \li \l{Button}
+        \li \l{Button}        
+        \li \l{EsoodPinchArea}
         \li \l{Settings}
-        \li \l{EsoodPinchArea}        
+        \li \l{TextTemplate}
     \endlist    
 */
 

@@ -3,6 +3,7 @@ import "."
 /*!
 \qmltype TextTemplate
 \brief Declarative for modal help text.
+The text is wrapped if it is multiline. HTML tags can be inserted ex: <br>
 \section2 Licensing
 \legalese
 @copyright GNU GENERAL PUBLIC LICENSE  
