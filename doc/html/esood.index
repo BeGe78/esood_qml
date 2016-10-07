@@ -23,14 +23,14 @@
             <contents name="licensing" title="Licensing" level="2"/>
             <qmlproperty threadsafety="unspecified" name="loginSwitch" fullname="Login::loginSwitch" href="qml-login.html#loginSwitch-prop" status="active" access="public" type="string" attached="false" writable="true"/>
             <qmlsignal threadsafety="unspecified" name="loginok" fullname="Login::loginok" href="qml-login.html#loginok-signal" status="active" access="public"/>
-            <qmlmethod threadsafety="unspecified" name="deleteSession" fullname="Login::deleteSession" href="qml-login.html#deleteSession-method" status="active" access="public" location="Login.qml" filepath="/home/workspace/android/esood/content/Login.qml" lineno="180"/>
-            <qmlmethod threadsafety="unspecified" name="postSession" fullname="Login::postSession" href="qml-login.html#postSession-method" status="active" access="public" location="Login.qml" filepath="/home/workspace/android/esood/content/Login.qml" lineno="147"/>
+            <qmlmethod threadsafety="unspecified" name="deleteSession" fullname="Login::deleteSession" href="qml-login.html#deleteSession-method" status="active" access="public" location="Login.qml" filepath="/home/workspace/android/esood/content/Login.qml" lineno="208"/>
+            <qmlmethod threadsafety="unspecified" name="postSession" fullname="Login::postSession" href="qml-login.html#postSession-method" status="active" access="public" location="Login.qml" filepath="/home/workspace/android/esood/content/Login.qml" lineno="175"/>
         </qmlclass>
         <qmlclass threadsafety="unspecified" name="ParametersChoice" qml-module-name="ParametersChoice" href="qml-parameterschoice.html" status="active" access="public" title="ParametersChoice" fulltitle="ParametersChoice" subtitle="" brief="ESoOd parameters choice screen composed of years, indicators and countries">
             <contents name="licensing" title="Licensing" level="2"/>
             <qmlproperty threadsafety="unspecified" name="email" fullname="ParametersChoice::email" href="qml-parameterschoice.html#email-prop" status="active" access="public" type="string" attached="false" writable="true"/>
-            <qmlmethod threadsafety="unspecified" name="getCountries" fullname="ParametersChoice::getCountries" href="qml-parameterschoice.html#getCountries-method" status="active" access="public" location="ParametersChoice.qml" filepath="/home/workspace/android/esood/content/ParametersChoice.qml" lineno="363"/>
-            <qmlmethod threadsafety="unspecified" name="getIndicators" fullname="ParametersChoice::getIndicators" href="qml-parameterschoice.html#getIndicators-method" status="active" access="public" location="ParametersChoice.qml" filepath="/home/workspace/android/esood/content/ParametersChoice.qml" lineno="403"/>
+            <qmlmethod threadsafety="unspecified" name="getCountries" fullname="ParametersChoice::getCountries" href="qml-parameterschoice.html#getCountries-method" status="active" access="public" location="ParametersChoice.qml" filepath="/home/workspace/android/esood/content/ParametersChoice.qml" lineno="412"/>
+            <qmlmethod threadsafety="unspecified" name="getIndicators" fullname="ParametersChoice::getIndicators" href="qml-parameterschoice.html#getIndicators-method" status="active" access="public" location="ParametersChoice.qml" filepath="/home/workspace/android/esood/content/ParametersChoice.qml" lineno="452"/>
         </qmlclass>
         <qmlclass threadsafety="unspecified" name="SelectorsChartView" qml-module-name="SelectorsChartView" href="qml-selectorschartview.html" status="active" access="public" title="SelectorsChartView" fulltitle="SelectorsChartView" subtitle="" brief="Dipslay the chart corresponding to the selected parameters">
             <contents name="licensing" title="Licensing" level="2"/>
@@ -46,15 +46,21 @@
             <qmlproperty threadsafety="unspecified" name="same_scale" fullname="SelectorsChartView::same_scale" href="qml-selectorschartview.html#same_scale-prop" status="active" access="public" type="bool" attached="false" writable="true"/>
             <qmlproperty threadsafety="unspecified" name="unit" fullname="SelectorsChartView::unit" href="qml-selectorschartview.html#unit-prop" status="active" access="public" type="string" attached="false" writable="true"/>
             <qmlproperty threadsafety="unspecified" name="unit2" fullname="SelectorsChartView::unit2" href="qml-selectorschartview.html#unit2-prop" status="active" access="public" type="string" attached="false" writable="true"/>
-            <qmlmethod threadsafety="unspecified" name="drawChart" fullname="SelectorsChartView::drawChart" href="qml-selectorschartview.html#drawChart-method" status="active" access="public" location="SelectorsChartView.qml" filepath="/home/workspace/android/esood/content/SelectorsChartView.qml" lineno="135"/>
+            <qmlmethod threadsafety="unspecified" name="drawChart" fullname="SelectorsChartView::drawChart" href="qml-selectorschartview.html#drawChart-method" status="active" access="public" location="SelectorsChartView.qml" filepath="/home/workspace/android/esood/content/SelectorsChartView.qml" lineno="137"/>
         </qmlclass>
         <qmlclass threadsafety="unspecified" name="SelectorsStatView" qml-module-name="SelectorsStatView" href="qml-selectorsstatview.html" status="active" access="public" title="SelectorsStatView" fulltitle="SelectorsStatView" subtitle="">
             <contents name="licensing" title="Licensing" level="2"/>
-            <qmlmethod threadsafety="unspecified" name="drawStat" fullname="SelectorsStatView::drawStat" href="qml-selectorsstatview.html#drawStat-method" status="active" access="public" location="SelectorsStatView.qml" filepath="/home/workspace/android/esood/content/SelectorsStatView.qml" lineno="165"/>
+            <qmlmethod threadsafety="unspecified" name="drawStat" fullname="SelectorsStatView::drawStat" href="qml-selectorsstatview.html#drawStat-method" status="active" access="public" location="SelectorsStatView.qml" filepath="/home/workspace/android/esood/content/SelectorsStatView.qml" lineno="175"/>
         </qmlclass>
         <qmlclass threadsafety="unspecified" name="Settings" qml-module-name="Settings" href="qml-settings.html" status="active" access="public" title="Settings" fulltitle="Settings" subtitle="" brief="Declarative of the standard font family">
             <contents name="licensing" title="Licensing" level="2"/>
             <qmlproperty threadsafety="unspecified" name="fontFamily" fullname="Settings::fontFamily" href="qml-settings.html#fontFamily-prop" status="active" access="public" type="string" attached="false" writable="true"/>
+        </qmlclass>
+        <qmlclass threadsafety="unspecified" name="TextTemplate" qml-module-name="TextTemplate" href="qml-texttemplate.html" status="active" access="public" title="TextTemplate" fulltitle="TextTemplate" subtitle="" brief="Declarative for modal help text">
+            <contents name="licensing" title="Licensing" level="2"/>
+            <qmlproperty threadsafety="unspecified" name="label" fullname="TextTemplate::label" href="qml-texttemplate.html#label-prop" status="active" access="public" type="string" attached="false" writable="true"/>
+            <qmlproperty threadsafety="unspecified" name="paint" fullname="TextTemplate::paint" href="qml-texttemplate.html#paint-prop" status="active" access="public" type="color" attached="false" writable="true"/>
+            <qmlproperty threadsafety="unspecified" name="topwidth" fullname="TextTemplate::topwidth" href="qml-texttemplate.html#topwidth-prop" status="active" access="public" type="real" attached="false" writable="true"/>
         </qmlclass>
         <qmlclass threadsafety="unspecified" name="esood" qml-module-name="esood" href="qml-esood.html" status="active" access="public" title="esood" fulltitle="esood" subtitle="" brief="Entry of the ESoOD project qml interface The application GUI is composed of a fix banner with directional arrows and 4 flickable pages implemented with a ListView:">
             <contents name="licensing" title="Licensing" level="2"/>

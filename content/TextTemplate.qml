@@ -2,7 +2,7 @@ import QtQuick 2.7
 import "."
 /*!
 \qmltype TextTemplate
-\brief Declarative for standard button.
+\brief Declarative for modal help text.
 \section2 Licensing
 \legalese
 @copyright GNU GENERAL PUBLIC LICENSE  
@@ -15,13 +15,12 @@ Item {id:container
 //level to be able to control them programmatically. You may need a container if you
 //have two (or more) Text elements and/or combine a Text element with others element.
  width:500; height:500
- 
-//Bind Text element properties with properties at top level
- /*! /internal */
+
+ /*! parent width: bind Text element properties with properties at top level */
  property real topwidth: parent.width
- /*! /internal */
+ /*! displayed text*/
  property string label:"Sample text"
- /*! /internal */
+ /*! background colour */
  property color paint
  
  Text { id:template
