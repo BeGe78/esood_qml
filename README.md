@@ -7,7 +7,7 @@
 
 ## Preamble
 **ESoOD** is a Ruby on Rails application providing statistical graph and analysis relative to the World Bank Open Data set.  
-**esood_qml** contains the Android interface.__
+**esood_qml** contains the Android interface.  
 The site supports two languages: *en* and *fr*.  
 It is licensed with a GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007.  
 Sources are hosted on [github](https://github.com/BeGe78/esood_qml) .  
