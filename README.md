@@ -2,7 +2,7 @@
 
 [![Homepage](http://img.shields.io/badge/home-ESoOD-blue.svg)](https://bege.hd.free.fr)
 [![GitHub](http://img.shields.io/badge/github-ESoOD-yellow.svg)](https://github.com/BeGe78/esood_qml)
-[![Documentation](http://img.shields.io/badge/docs-yard-green.svg)](tree/master/doc/html/index.html)
+[![Documentation](http://img.shields.io/badge/docs-yard-green.svg)](doc/html/index.html)
 [![Release](http://img.shields.io/badge/releases-ESoOD-orange.svg)](http://github.com/BeGe78/esood_qml/releases)
 [![License](http://img.shields.io/badge/license-GNU-red.svg)](https://bege.hd.free.fr/docs/file.LICENSE.html)
 
