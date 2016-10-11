@@ -407,6 +407,7 @@ Rectangle {
             event += mainRect.currentCountry2;
             gAnalytics.sendEvent("A-Selectors", mainRect.formswitch, event, 1);
             selectorsChartView.drawChart();
+            mainRect.currentIndex = 2;
         }
     }
     /*!
