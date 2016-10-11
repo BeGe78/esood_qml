@@ -2,8 +2,9 @@
 
 [![Homepage](http://img.shields.io/badge/home-ESoOD-blue.svg)](https://bege.hd.free.fr)
 [![GitHub](http://img.shields.io/badge/github-ESoOD-yellow.svg)](https://github.com/BeGe78/esood_qml)
+[![Documentation](http://img.shields.io/badge/docs-yard-green.svg)](https://github.com/BeGe78/esood_qml/tree/master/doc/html/index.html)
 [![Release](http://img.shields.io/badge/releases-ESoOD-orange.svg)](http://github.com/BeGe78/esood_qml/releases)
-[![License](http://img.shields.io/badge/license-GNU-red.svg)](https://bege.hd.free.fr/docs/file/LICENSE)
+[![License](http://img.shields.io/badge/license-GNU-red.svg)](https://bege.hd.free.fr/docs/file.LICENSE.html)
 
 ## Preamble
 **ESoOD** is a Ruby on Rails application providing statistical graph and analysis relative to the World Bank Open Data set.  
