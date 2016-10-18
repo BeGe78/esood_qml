@@ -32,7 +32,7 @@
     <message>
         <location filename="content/Login.qml" line="156"/>
         <source>connexionhelp</source>
-        <translation>Login is not mandatory. However, to get full features, you need to register on &lt;a href=&quot;https:/bege.hd.free.fr&quot;&gt;https:/bege.hd.free.fr&lt;/a&gt; and login</translation>
+        <translation>Login is not mandatory. However, to get all the features, you need to register on &lt;a href=&quot;https:/bege.hd.free.fr&quot;&gt;https:/bege.hd.free.fr&lt;/a&gt; and login</translation>
     </message>
     <message>
         <location filename="content/Login.qml" line="198"/>
@@ -63,32 +63,32 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="content/ParametersChoice.qml" line="92"/>
+        <location filename="content/ParametersChoice.qml" line="97"/>
         <source>Year End: </source>
         <translation>Year End: </translation>
     </message>
     <message>
-        <location filename="content/ParametersChoice.qml" line="140"/>
+        <location filename="content/ParametersChoice.qml" line="150"/>
         <source>yearhelp</source>
         <translation>Years should be between 1965 and 2015</translation>
     </message>
     <message>
-        <location filename="content/ParametersChoice.qml" line="156"/>
+        <location filename="content/ParametersChoice.qml" line="166"/>
         <source>Countries</source>
         <translation>Countries</translation>
     </message>
     <message>
-        <location filename="content/ParametersChoice.qml" line="174"/>
+        <location filename="content/ParametersChoice.qml" line="184"/>
         <source>Indicators</source>
         <translation>Indicators</translation>
     </message>
     <message>
-        <location filename="content/ParametersChoice.qml" line="209"/>
+        <location filename="content/ParametersChoice.qml" line="219"/>
         <source>buttonhelp</source>
         <translation>&lt;li&gt;&lt;b&gt;Countries button&lt;/b&gt;: compare two countries for one indicator&lt;/li&gt;&lt;li&gt;&lt;b&gt; Indicators button&lt;/b&gt;: compare two indicator for one country&lt;/li&gt;</translation>
     </message>
     <message>
-        <location filename="content/ParametersChoice.qml" line="388"/>
+        <location filename="content/ParametersChoice.qml" line="398"/>
         <source>Update</source>
         <translation>Update</translation>
     </message>
@@ -104,37 +104,42 @@
 <context>
     <name>SelectorsStatView</name>
     <message>
-        <location filename="content/SelectorsStatView.qml" line="119"/>
+        <location filename="content/SelectorsStatView.qml" line="37"/>
+        <source>stathelp</source>
+        <translation>&lt;li&gt;&lt;b&gt;slope&lt;/b&gt;: annual variation as given by a simple linear regression&lt;/li&gt;&lt;li&gt;&lt;b&gt;Determination&lt;/b&gt;: simple linear regression correlation coefficient&lt;/li&gt;&lt;li&gt;&lt;b&gt;Meanrate&lt;/b&gt;: mean growing rate (percentage)&lt;/li&gt;&lt;li&gt;&lt;b&gt;Correlation&lt;/b&gt;: correlation coefficient between the 2 curves&lt;/li&gt;</translation>
+    </message>
+    <message>
+        <location filename="content/SelectorsStatView.qml" line="140"/>
         <source>Country</source>
         <translation>Country</translation>
     </message>
     <message>
-        <location filename="content/SelectorsStatView.qml" line="119"/>
+        <location filename="content/SelectorsStatView.qml" line="140"/>
         <source>Indicator</source>
         <translation>Indicator</translation>
     </message>
     <message>
-        <location filename="content/SelectorsStatView.qml" line="127"/>
+        <location filename="content/SelectorsStatView.qml" line="148"/>
         <source>Mean</source>
         <translation>Mean</translation>
     </message>
     <message>
-        <location filename="content/SelectorsStatView.qml" line="135"/>
+        <location filename="content/SelectorsStatView.qml" line="156"/>
         <source>Slope</source>
         <translation>Slope</translation>
     </message>
     <message>
-        <location filename="content/SelectorsStatView.qml" line="143"/>
+        <location filename="content/SelectorsStatView.qml" line="164"/>
         <source>Determination</source>
         <translation>Determination</translation>
     </message>
     <message>
-        <location filename="content/SelectorsStatView.qml" line="151"/>
+        <location filename="content/SelectorsStatView.qml" line="172"/>
         <source>Meanrate</source>
         <translation>Mean rate</translation>
     </message>
     <message>
-        <location filename="content/SelectorsStatView.qml" line="159"/>
+        <location filename="content/SelectorsStatView.qml" line="180"/>
         <source>Correlation</source>
         <translation>Correlation</translation>
     </message>

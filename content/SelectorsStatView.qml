@@ -1,6 +1,7 @@
 import QtQuick 2.7
 import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
+import QtQuick.Dialogs 1.2
 import "."
 /*!
 \qmltype SelectorsStatView
@@ -26,6 +27,17 @@ Rectangle {
         xScale: pinchArea.m_zoom2
         yScale: pinchArea.m_zoom2
     }
+    Dialog {
+        id: statHelp
+        contentItem: Rectangle {
+            color: "white"
+            implicitWidth: 450
+            implicitHeight: 200
+            TextTemplate {
+                label: qsTr("stathelp")
+            }
+        }
+    }
 
     EsoodPinchArea { id: pinchArea }
 
@@ -39,8 +51,11 @@ Rectangle {
         MouseArea {
             anchors.fill: parent
             drag.target: rectangle
+            propagateComposedEvents: true            
             drag.axis: Drag.XAndYAxis
             onClicked: console.log("Click in rectangle")
+            onPressed: statHelp.open();
+            onReleased: statHelp.close();
             drag.filterChildren: false
         }
         Rectangle {
@@ -76,6 +91,8 @@ Rectangle {
                     console.log("table height : ",selectorStat.height)
                     mouse.accepted = false
                 }
+                onPressed: statHelp.open();
+                onReleased: statHelp.close();
             }
             headerDelegate: Rectangle {
                 id: tablehead

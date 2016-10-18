@@ -63,6 +63,11 @@ Rectangle {
             font.bold: true
             font.family: "Verdana"
             font.pixelSize: 15
+            MouseArea {
+                anchors.fill: parent
+                onPressed: yearHelp.open();
+                onReleased: yearHelp.close();
+            }
         }
 
         Rectangle {
@@ -95,6 +100,11 @@ Rectangle {
             horizontalAlignment: Text.AlignRight
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 15
+            MouseArea {
+                anchors.fill: parent
+                onPressed: yearHelp.open();
+                onReleased: yearHelp.close();
+            }
         }
         Rectangle {
             id: yearEndTextInputRectangle

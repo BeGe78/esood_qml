@@ -32,7 +32,7 @@
     <message>
         <location filename="content/Login.qml" line="156"/>
         <source>connexionhelp</source>
-        <translation>La connexion n&apos;est pas obligatoire. Mais pour avoir toutes les fonctionalités, il faut vous enregistrer sur le web sur &lt;a href=&quot;https:/bege.hd.free.fr&quot;&gt;https:/bege.hd.free.fr&lt;/a&gt; et vous identifier</translation>
+        <translation>La connexion n&apos;est pas obligatoire. Mais pour avoir toutes les fonctionalités, il faut vous enregistrer sur le web &lt;a href=&quot;https:/bege.hd.free.fr&quot;&gt;https:/bege.hd.free.fr&lt;/a&gt; et vous connecter</translation>
     </message>
     <message>
         <location filename="content/Login.qml" line="198"/>
@@ -63,32 +63,32 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="content/ParametersChoice.qml" line="92"/>
+        <location filename="content/ParametersChoice.qml" line="97"/>
         <source>Year End: </source>
         <translation>Année Fin:</translation>
     </message>
     <message>
-        <location filename="content/ParametersChoice.qml" line="140"/>
+        <location filename="content/ParametersChoice.qml" line="150"/>
         <source>yearhelp</source>
         <translation>Les années sont comprises entre 1965 et 2015</translation>
     </message>
     <message>
-        <location filename="content/ParametersChoice.qml" line="156"/>
+        <location filename="content/ParametersChoice.qml" line="166"/>
         <source>Countries</source>
         <translation>Pays</translation>
     </message>
     <message>
-        <location filename="content/ParametersChoice.qml" line="174"/>
+        <location filename="content/ParametersChoice.qml" line="184"/>
         <source>Indicators</source>
         <translation>Indicateurs</translation>
     </message>
     <message>
-        <location filename="content/ParametersChoice.qml" line="209"/>
+        <location filename="content/ParametersChoice.qml" line="219"/>
         <source>buttonhelp</source>
         <translation>&lt;li&gt;&lt;b&gt;bouton Pays&lt;/b&gt;: compare deux pays pour un indicateur&lt;/li&gt;&lt;li&gt;&lt;b&gt;bouton Indicateurs&lt;/b&gt;: compare deux indicateurs pour un pays&lt;/li&gt;</translation>
     </message>
     <message>
-        <location filename="content/ParametersChoice.qml" line="388"/>
+        <location filename="content/ParametersChoice.qml" line="398"/>
         <source>Update</source>
         <translation>Rafraichir</translation>
     </message>
@@ -104,37 +104,42 @@
 <context>
     <name>SelectorsStatView</name>
     <message>
-        <location filename="content/SelectorsStatView.qml" line="119"/>
+        <location filename="content/SelectorsStatView.qml" line="37"/>
+        <source>stathelp</source>
+        <translation>&lt;li&gt;&lt;b&gt;Pente&lt;/b&gt;: variation annuelle donnée par la regression linéaire simple&lt;/li&gt;&lt;li&gt;&lt;b&gt;Determination&lt;/b&gt;: coefficient de correlation de la regression linéaire simple&lt;/li&gt;&lt;li&gt;&lt;b&gt;Var. moyenne&lt;/b&gt;: croissance moyenne (pourcentage) &lt;/li&gt;&lt;li&gt;&lt;b&gt;Correlation&lt;/b&gt;: coefficient de correlation entre les 2 courbes&lt;/li&gt;&lt;/ul&gt;</translation>
+    </message>
+    <message>
+        <location filename="content/SelectorsStatView.qml" line="140"/>
         <source>Country</source>
         <translation>Pays</translation>
     </message>
     <message>
-        <location filename="content/SelectorsStatView.qml" line="119"/>
+        <location filename="content/SelectorsStatView.qml" line="140"/>
         <source>Indicator</source>
         <translation>Indicateur</translation>
     </message>
     <message>
-        <location filename="content/SelectorsStatView.qml" line="127"/>
+        <location filename="content/SelectorsStatView.qml" line="148"/>
         <source>Mean</source>
         <translation>Moyenne</translation>
     </message>
     <message>
-        <location filename="content/SelectorsStatView.qml" line="135"/>
+        <location filename="content/SelectorsStatView.qml" line="156"/>
         <source>Slope</source>
         <translation>Pente</translation>
     </message>
     <message>
-        <location filename="content/SelectorsStatView.qml" line="143"/>
+        <location filename="content/SelectorsStatView.qml" line="164"/>
         <source>Determination</source>
         <translation>Détermination</translation>
     </message>
     <message>
-        <location filename="content/SelectorsStatView.qml" line="151"/>
+        <location filename="content/SelectorsStatView.qml" line="172"/>
         <source>Meanrate</source>
         <translation>Var. moyenne</translation>
     </message>
     <message>
-        <location filename="content/SelectorsStatView.qml" line="159"/>
+        <location filename="content/SelectorsStatView.qml" line="180"/>
         <source>Correlation</source>
         <translation>Correlation</translation>
     </message>
@@ -144,7 +149,7 @@
     <message>
         <location filename="esood.qml" line="118"/>
         <source>esoodhelp</source>
-        <translation>ESoOD fournit des éléments de comparaison de données économiques pour des pays ou zones géographiques. Les données sont extraites de la base des Données Ouvertes de la Banque Mondiale. &lt;br&gt;ESoOD est composée de 4 pages: &lt;ul&gt;&lt;li&gt;Connexion (optionel)&lt;/li&gt;&lt;li&gt;Choix des paramètres&lt;/li&gt;&lt;li&gt;Affichage des courbes&lt;/li&gt;&lt;li&gt;Afficahge des statistiques&lt;/li&gt;&lt;/ul&gt;Plus de détails sont donnés sur &lt;a href=&quot;https:/bege.hd.free.fr&quot;&gt;https:/bege.hd.free.fr&lt;/a&gt;.&lt;br&gt; Bonne application</translation>
+        <translation>ESoOD fournit des éléments de comparaison de données économiques pour des pays ou zones géographiques. Les données sont extraites de la base des Données Ouvertes de la Banque Mondiale. &lt;br&gt;ESoOD est composée de 4 pages: &lt;ul&gt;&lt;li&gt;Connexion (optionel)&lt;/li&gt;&lt;li&gt;Choix des paramètres&lt;/li&gt;&lt;li&gt;Affichage des courbes&lt;/li&gt;&lt;li&gt;Affichage des statistiques&lt;/li&gt;&lt;/ul&gt;Plus de détails sont donnés sur &lt;a href=&quot;https:/bege.hd.free.fr&quot;&gt;https:/bege.hd.free.fr&lt;/a&gt;.&lt;br&gt; Bonne application</translation>
     </message>
 </context>
 </TS>
