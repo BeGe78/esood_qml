@@ -40,6 +40,7 @@ Rectangle {
         anchors.top: parent.top
         width: parent.width
         height: emailText.height + 20
+        anchors.topMargin: 20
         spacing: 5
         padding: 10
 

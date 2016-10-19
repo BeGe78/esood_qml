@@ -74,7 +74,7 @@ Rectangle {
         TableView {
             id: selectorStat
             width: root.width - 20
-            height: 200
+            height: 220
             x: rectangle.x + 10
             y: rectangle.y + 40
             frameVisible: true
@@ -119,7 +119,7 @@ Rectangle {
                   var baseColor = styleData.alternate?myPalette.alternateBase:myPalette.base
                   return styleData.selected?myPalette.highlight:baseColor
                }
-               scale: 0.01
+               //scale: 0.01
             }
             itemDelegate: Item {
                 height: Math.max(60, label.implicitHeight)
